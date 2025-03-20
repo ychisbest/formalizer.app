@@ -1,0 +1,158 @@
+---
+import "../styles/global.css";
+import Config from "../config";
+
+export interface Props {
+  title: string;
+  description: string;
+  keywords: string[];
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  keywords = `${Config.name}`,
+  ogImage = "/og.png",
+} = Astro.props;
+
+const canonicalURL = Astro.url.href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | {Config.name}</title>
+    <meta name="google-adsense-account" content="ca-pub-9962529123137713" />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content={typeof keywords === "string" ? keywords : keywords.join(", ")}
+    />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "{Config.name}",
+        "url": "https://{Config.url}",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://{Config.url}/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+  </head>
+  <body class="min-h-screen bg-white text-gray-800 flex flex-col antialiased">
+    <main class="flex-grow">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --notion-bg: #ffffff;
+    --notion-text: #37352f;
+    --notion-gray-bg: #f7f6f3;
+    --notion-gray-text: #787774;
+    --notion-border: #e0ddd9;
+    --notion-blue: #2e6fdb;
+    --notion-blue-bg: #e4eaff;
+    --notion-orange-bg: #faebdd;
+    --notion-green-bg: #ddedea;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--notion-bg);
+    color: var(--notion-text);
+  }
+
+  h1 {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--notion-text);
+  }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--notion-text);
+  }
+
+  h3 {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--notion-text);
+  }
+
+  a {
+    color: var(--notion-blue);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .notion-card {
+    border: 1px solid var(--notion-border);
+    border-radius: 4px;
+    padding: 16px;
+    background-color: var(--notion-bg);
+    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, 
+                rgba(15, 15, 15, 0.1) 0px 3px 6px, 
+                rgba(15, 15, 15, 0.2) 0px 9px 24px;
+  }
+
+  .notion-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: var(--notion-gray-bg);
+    color: var(--notion-gray-text);
+  }
+</style>

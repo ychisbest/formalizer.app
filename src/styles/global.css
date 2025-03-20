@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #000000, #333333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 标题样式 */
+.prose h1 {
+  @apply text-3xl font-bold mb-8 text-white;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mt-12 mb-6 text-white;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold mt-8 mb-4 text-white;
+}
+
+.prose h4 {
+  @apply text-lg font-semibold mt-6 mb-3 text-white;
+}
+
+/* 段落和列表样式 */
+.prose p {
+  @apply mb-6 leading-relaxed text-white;
+}
+
+.prose ul {
+  @apply mb-6 list-disc list-inside;
+}
+
+.prose ol {
+  @apply mb-6 list-decimal list-inside;
+}
+
+.prose li {
+  @apply mb-2 text-white;
+}
+
+/* 引用块样式 */
+.prose blockquote {
+  @apply pl-4 border-l-4 border-blue-500 italic my-6 text-white;
+}
+
+/* 代码块样式 */
+.prose pre {
+  @apply bg-gray-50 rounded-lg p-4 my-6 overflow-x-auto;
+}
+
+.prose code {
+  @apply bg-gray-100 rounded px-1 py-0.5 text-sm text-gray-800;
+}
+
+/* 表格样式 */
+.prose table {
+  @apply w-full border-collapse my-6;
+}
+
+.prose th {
+  @apply bg-gray-50 border border-gray-200 px-4 py-2 text-left;
+}
+
+.prose td {
+  @apply border border-gray-200 px-4 py-2;
+}
+
+/* 图片样式 */
+.prose img {
+  @apply rounded-lg shadow-md my-6 max-w-full h-auto;
+}
+
+/* 链接样式 */
+.prose a {
+  @apply text-blue-600 hover:text-blue-800 transition-colors;
+}
+
+/* 分割线样式 */
+.prose hr {
+  @apply my-8 border-t border-gray-200;
+}
