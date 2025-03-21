@@ -9,62 +9,62 @@ const DemoSection = () => {
 
     const formalizeText = async () => {
         if (!inputText.trim() || isGenerating) return;
-        
+
         setIsGenerating(true);
         setOutputText("");
-        
+
         try {
             const response = await fetch('https://ai.ych.show', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ych'
-            },
-            body: JSON.stringify({ 
-                model: "random", 
-                stream: true,
-                messages: [
-                {
-                    role: "system",
-                    content: `
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ych'
+                },
+                body: JSON.stringify({
+                    model: "random",
+                    stream: true,
+                    messages: [
+                        {
+                            role: "system",
+                            content: `
                     You are a professional editor. Rewrite the following informal text into formal, professional language. Keep the same meaning but make it appropriate for business or academic settings.
                     - reply me the language in the same language as the input text.
                     `
-                },
-                {
-                    role: "user",
-                    content: inputText
-                }
-                ]
-            }),
+                        },
+                        {
+                            role: "user",
+                            content: inputText
+                        }
+                    ]
+                }),
             });
 
             if (!response.body) {
-            throw new Error('ReadableStream not supported');
+                throw new Error('ReadableStream not supported');
             }
 
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
-            
+
             while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            
-            const chunk = decoder.decode(value);
-            const lines = chunk.split('\n');
-            
-            for (const line of lines) {
-                if (line.startsWith('data:') && !line.includes('[DONE]')) {
-                try {
-                    const data = JSON.parse(line.substring(5));
-                    if (data.choices && data.choices[0]?.delta?.content) {
-                    setOutputText(prev => prev + data.choices[0].delta.content);
+                const { done, value } = await reader.read();
+                if (done) break;
+
+                const chunk = decoder.decode(value);
+                const lines = chunk.split('\n');
+
+                for (const line of lines) {
+                    if (line.startsWith('data:') && !line.includes('[DONE]')) {
+                        try {
+                            const data = JSON.parse(line.substring(5));
+                            if (data.choices && data.choices[0]?.delta?.content) {
+                                setOutputText(prev => prev + data.choices[0].delta.content);
+                            }
+                        } catch (e) {
+                            // Skip invalid JSON
+                        }
                     }
-                } catch (e) {
-                    // Skip invalid JSON
                 }
-                }
-            }
             }
         } catch (error) {
             console.error('Error formalizing text:', error);
@@ -110,12 +110,14 @@ const DemoSection = () => {
                                 Before
                             </h3>
                             {isEditing ? (
-                                <textarea 
-                                    ref={textareaRef}
-                                    className="w-full h-auto resize-none focus:border-transparent focus:outline-none p-2 border-none border-gray-300 rounded text-gray-700"
-                                    value={inputText}
-                                    onChange={(e) => setInputText(e.target.value)}
-                                />
+                                <div className=' pb-4 h-full'>
+                                    <textarea
+                                        ref={textareaRef}
+                                        className="w-full h-full resize-none focus:border-transparent focus:outline-none p-2 border-none border-gray-300 rounded text-gray-700"
+                                        value={inputText}
+                                        onChange={(e) => setInputText(e.target.value)}
+                                    />
+                                </div>
                             ) : (
                                 <p className="text-gray-700 mb-4">
                                     {inputText}
@@ -126,7 +128,7 @@ const DemoSection = () => {
                             <h3 className="text-lg font-medium text-gray-900 mb-3 flex justify-between items-center">
                                 <span>After Formalizer</span>
                                 {outputText && (
-                                    <button 
+                                    <button
                                         onClick={copyToClipboard}
                                         className="text-blue-600 hover:text-blue-800 text-sm flex items-center"
                                     >
