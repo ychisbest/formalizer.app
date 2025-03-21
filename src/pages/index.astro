@@ -1,21 +1,37 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Formalizer from "../components/Formalizer";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Formalizer - Make Your Text Professional">
+<Layout
+    title="Formalizer - Make Your Text Professional With Ease"
+    description="Transform casual text into professional content with Formalizer. Perfect for academics, business emails, and more."
+    keywords={[
+        "text formalization",
+        "professional writing",
+        "text transformation",
+    ]}
+>
     <header class="fixed w-full bg-white shadow-sm z-10">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0 flex items-center">
-                    <span class="text-2xl font-bold text-blue-600">Formalizer</span>
+                    <span class="text-2xl font-bold text-blue-600"
+                        >Formalizer</span
+                    >
                 </div>
                 <nav class="hidden md:flex space-x-8">
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Features</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Pricing</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+                    <a
+                        href="#FAQ"
+                        class="text-gray-600 hover:text-blue-600 transition-colors"
+                        >FAQ</a
+                    >
+                    <a
+                        href="#contact"
+                        class="text-gray-600 hover:text-blue-600 transition-colors"
+                        >Contact</a
+                    >
                 </nav>
-
             </div>
         </div>
     </header>
@@ -23,88 +39,127 @@ import Layout from '../layouts/Layout.astro';
         <!-- Hero Section -->
         <section class="px-6 py-24 md:py-32">
             <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6">
-                    Transform Casual Text into <span class="text-blue-600">Professional Content</span>
+                <h1
+                    class="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6"
+                >
+                    Transform Casual Text into <span class="text-blue-600"
+                        >Professional Content</span
+                    >
                 </h1>
                 <p class="text-xl text-gray-600 mb-10">
-                    Formalizer helps you instantly convert casual writing into polished, professional text
-                    suitable for academic papers, business communications, and formal documents.
+                    Formalizer helps you instantly convert casual writing into
+                    polished, professional text suitable for academic papers,
+                    business communications, and formal documents.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium text-lg transition-colors">
+                    <a
+                        href="#core"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium text-lg transition-colors"
+                    >
                         Try Formalizer Now
-                    </button>
-                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium text-lg transition-colors">
-                        How It Works
-                    </button>
+                    </a>
+                    <a
+                        href="#FAQ"
+                        class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium text-lg transition-colors"
+                    >
+                        FAQ
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Demo Section -->
-        <section class="bg-gray-50 px-6 py-20">
-            <div class="max-w-5xl mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">See The Transformation</h2>
-                
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
-                        <div class="p-6">
-                            <h3 class="text-lg font-medium text-gray-900 mb-3">Before</h3>
-                            <p class="text-gray-700 mb-4">
-                                Hey there! Just wanted to let u know that I'm gonna be late for the meeting tmrw. 
-                                Traffic is crazy and I gotta drop my kids off first. Let's push it back 30 mins? Thx!
-                            </p>
-                        </div>
-                        <div class="p-6 bg-blue-50">
-                            <h3 class="text-lg font-medium text-gray-900 mb-3">After Formalizer</h3>
-                            <p class="text-gray-700 mb-4">
-                                Good afternoon, I'm writing to inform you that I will be arriving later than scheduled 
-                                for tomorrow's meeting. Due to anticipated traffic conditions and prior family obligations, 
-                                I respectfully request that we postpone the start time by 30 minutes. Thank you for your understanding.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 px-6 py-4 text-center">
-                        <button class="text-blue-600 font-medium hover:text-blue-800">Try with your own text →</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <Formalizer client:load />
 
         <!-- Features Section -->
         <section class="px-6 py-20">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">Why Use Formalizer?</h2>
-                
+                <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">
+                    Why Use Formalizer?
+                </h2>
+
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="text-center">
-                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        <div
+                            class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-8 w-8 text-blue-600"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Instant Formalization</h3>
-                        <p class="text-gray-600">Transform your casual writing into formal text in seconds, not hours.</p>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Instant Formalization
+                        </h3>
+                        <p class="text-gray-600">
+                            Transform your casual writing into formal text in
+                            seconds, not hours.
+                        </p>
                     </div>
-                    
+
                     <div class="text-center">
-                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        <div
+                            class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-8 w-8 text-blue-600"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                                ></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Context-Aware</h3>
-                        <p class="text-gray-600">Maintains your original meaning while enhancing vocabulary and structure.</p>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Context-Aware
+                        </h3>
+                        <p class="text-gray-600">
+                            Maintains your original meaning while enhancing
+                            vocabulary and structure.
+                        </p>
                     </div>
-                    
+
                     <div class="text-center">
-                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        <div
+                            class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-8 w-8 text-blue-600"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                ></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Multiple Use Cases</h3>
-                        <p class="text-gray-600">Perfect for academics, business emails, cover letters, and official documents.</p>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Multiple Use Cases
+                        </h3>
+                        <p class="text-gray-600">
+                            Perfect for academics, business emails, cover
+                            letters, and official documents.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -113,32 +168,205 @@ import Layout from '../layouts/Layout.astro';
         <!-- CTA Section -->
         <section class="bg-blue-600 px-6 py-16 text-white">
             <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-4">Ready to Formalize Your Text?</h2>
-                <p class="text-blue-100 mb-8">Join thousands of professionals who use Formalizer to perfect their communication.</p>
-                <button class="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-medium text-lg transition-colors">
+                <h2 class="text-3xl text-white font-bold mb-4">
+                    Ready to Formalize Your Text?
+                </h2>
+                <p class="text-blue-100 mb-8">
+                    Join thousands of professionals who use Formalizer to
+                    perfect their communication.
+                </p>
+                <a
+                href="#core"
+                    class="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-medium text-lg transition-colors"
+                >
                     Get Started for Free
-                </button>
+                </a>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="bg-gray-50 px-6 py-12">
-            <div class="max-w-5xl mx-auto">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="mb-4 md:mb-0">
-                        <span class="text-xl font-bold text-gray-900">Formalizer</span>
-                    </div>
-                    <div class="flex space-x-6">
-                        <a href="#" class="text-gray-600 hover:text-gray-900">About</a>
-                        <a href="#" class="text-gray-600 hover:text-gray-900">Features</a>
-                        <a href="#" class="text-gray-600 hover:text-gray-900">Pricing</a>
-                        <a href="#" class="text-gray-600 hover:text-gray-900">Contact</a>
+        <div>
+            <!-- FAQ Section -->
+            <section id="FAQ" class="px-6 py-20 bg-gray-50">
+                <div class="max-w-5xl mx-auto">
+                    <h2
+                        class="text-3xl font-bold text-center mb-16 text-gray-900"
+                    >
+                        Frequently Asked Questions
+                    </h2>
+
+                    <div class="space-y-8">
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3
+                                class="text-xl font-semibold text-gray-900 mb-2"
+                            >
+                                How does Formalizer work?
+                            </h3>
+                            <p class="text-gray-600">
+                                Formalizer uses advanced natural language
+                                processing algorithms to analyze your text and
+                                transform it into professional language while
+                                preserving your original meaning.
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3
+                                class="text-xl font-semibold text-gray-900 mb-2"
+                            >
+                                Is my data secure?
+                            </h3>
+                            <p class="text-gray-600">
+                                Yes, we take privacy seriously. Your text is
+                                processed securely and we don't store any of
+                                your content after transformation is complete.
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3
+                                class="text-xl font-semibold text-gray-900 mb-2"
+                            >
+                                Can Formalizer handle different languages?
+                            </h3>
+                            <p class="text-gray-600">
+                                Currently, Formalizer primarily supports
+                                English, with beta support for Spanish, French,
+                                German, and Chinese. We're actively working on
+                                expanding our language capabilities to include
+                                more languages in the near future.
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3
+                                class="text-xl font-semibold text-gray-900 mb-2"
+                            >
+                                Is there a limit to how much text I can
+                                formalize?
+                            </h3>
+                            <p class="text-gray-600">
+                                The product is currently free. If you have more
+                                advanced feature requirements, please contact
+                                us./p>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="mt-8 pt-8 border-t border-gray-200 text-center text-gray-500">
-                    <p>© 2025 Formalizer. All rights reserved.</p>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="px-6 py-20">
+                <div class="max-w-4xl mx-auto">
+                    <h2
+                        class="text-3xl font-bold text-center mb-10 text-gray-900"
+                    >
+                        Contact Us
+                    </h2>
+
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-8">
+                            <form
+                                class="space-y-6"
+                                enctype="multipart/form-data"
+                                id="form"
+                                action="https://usebasin.com/f/c37e8dfc094f"
+                                method="POST"
+                            >
+                                <div
+                                    class="grid grid-cols-1 md:grid-cols-2 gap-6"
+                                >
+                                    <div>
+                                        <label
+                                            for="name"
+                                            class="block text-sm font-medium text-gray-700 mb-1"
+                                            >Name</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label
+                                            for="email"
+                                            class="block text-sm font-medium text-gray-700 mb-1"
+                                            >Email</label
+                                        >
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label
+                                        for="subject"
+                                        class="block text-sm font-medium text-gray-700 mb-1"
+                                        >Subject</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="subject"
+                                        name="subject"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        for="message"
+                                        class="block text-sm font-medium text-gray-700 mb-1"
+                                        >Message</label
+                                    >
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        rows="4"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                                    ></textarea>
+                                </div>
+                                <div>
+                                    <button
+                                        type="submit"
+                                        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                                    >
+                                        Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </footer>
-    </main>
-</Layout></svg>
+            </section>
+
+            <!-- Footer -->
+            <footer class="bg-gray-50 px-6 py-12">
+                <div class="max-w-5xl mx-auto">
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-center"
+                    >
+                        <div class="mb-4 md:mb-0">
+                            <span class="text-xl font-bold text-gray-900"
+                                >Formalizer</span
+                            >
+                        </div>
+                        <div class="flex space-x-6">
+                            <a
+                                href="#FAQ"
+                                class="text-gray-600 hover:text-gray-900">FAQ</a
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="mt-8 pt-8 border-t border-gray-200 text-center text-gray-500"
+                    >
+                        <p>© 2025 Formalizer. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main></Layout
+>

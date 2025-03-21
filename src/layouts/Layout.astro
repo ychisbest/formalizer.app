@@ -74,11 +74,6 @@ const canonicalURL = Astro.url.href;
         "@type": "WebSite",
         "name": "{Config.name}",
         "url": "https://{Config.url}",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://{Config.url}/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
       }
     </script>
   </head>
@@ -88,71 +83,3 @@ const canonicalURL = Astro.url.href;
     </main>
   </body>
 </html>
-
-<style is:global>
-  :root {
-    --notion-bg: #ffffff;
-    --notion-text: #37352f;
-    --notion-gray-bg: #f7f6f3;
-    --notion-gray-text: #787774;
-    --notion-border: #e0ddd9;
-    --notion-blue: #2e6fdb;
-    --notion-blue-bg: #e4eaff;
-    --notion-orange-bg: #faebdd;
-    --notion-green-bg: #ddedea;
-  }
-
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: var(--notion-bg);
-    color: var(--notion-text);
-  }
-
-  h1 {
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--notion-text);
-  }
-
-  h2 {
-    font-size: 1.5em;
-    font-weight: 600;
-    color: var(--notion-text);
-  }
-
-  h3 {
-    font-size: 1.2em;
-    font-weight: 500;
-    color: var(--notion-text);
-  }
-
-  a {
-    color: var(--notion-blue);
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  .notion-card {
-    border: 1px solid var(--notion-border);
-    border-radius: 4px;
-    padding: 16px;
-    background-color: var(--notion-bg);
-    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, 
-                rgba(15, 15, 15, 0.1) 0px 3px 6px, 
-                rgba(15, 15, 15, 0.2) 0px 9px 24px;
-  }
-
-  .notion-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-size: 12px;
-    font-weight: 500;
-    background-color: var(--notion-gray-bg);
-    color: var(--notion-gray-text);
-  }
-</style>

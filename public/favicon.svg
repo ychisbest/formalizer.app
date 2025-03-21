@@ -1,28 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="200" height="200"><svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <!-- 背景圆形 -->
-  <circle cx="100" cy="100" r="90" fill="#4a26ab"></circle>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="100" height="100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Background -->
+  <rect width="100" height="100" rx="15" fill="#2F3437"></rect>
   
-  <!-- 手柄主体 -->
-  <path d="M50 80 C50 60, 150 60, 150 80 L160 120 C165 140, 140 150, 130 130 L120 110 C120 105, 80 105, 80 110 L70 130 C60 150, 35 140, 40 120 L50 80Z" fill="#2e2e2e"></path>
+  <!-- Stylized "F" with structured elements -->
+  <rect x="30" y="25" width="40" height="10" fill="#FFFFFF"></rect>
+  <rect x="30" y="25" width="10" height="50" fill="#FFFFFF"></rect>
+  <rect x="30" y="45" width="30" height="10" fill="#FFFFFF"></rect>
   
-  <!-- 右侧按钮 -->
-  <circle cx="135" cy="85" r="8" fill="#ff5252"></circle>
-  <circle cx="155" cy="85" r="8" fill="#4caf50"></circle>
-  <circle cx="145" cy="75" r="8" fill="#2196f3"></circle>
-  <circle cx="145" cy="95" r="8" fill="#ffeb3b"></circle>
-  
-  <!-- 左侧十字键 -->
-  <rect x="50" y="80" width="30" height="10" rx="2" fill="#dedede"></rect>
-  <rect x="60" y="70" width="10" height="30" rx="2" fill="#dedede"></rect>
-  
-  <!-- 反光效果 -->
-  <path d="M60 75 C60 70, 140 70, 140 75 L145 90 C145 95, 55 95, 55 90 L60 75Z" fill="#ffffff" fill-opacity="0.1"></path>
-  
-  <!-- 内部阴影 -->
-  <circle cx="100" cy="100" r="90" fill="none" stroke="#33197a" stroke-width="6"></circle>
-  
-  <!-- 外部光晕 -->
-  <circle cx="100" cy="100" r="95" fill="none" stroke="#6b42c9" stroke-width="2"></circle>
+  <!-- Abstract structure elements -->
+  <line x1="75" y1="30" x2="75" y2="70" stroke="#FFFFFF" stroke-width="4"></line>
+  <line x1="65" y1="70" x2="85" y2="70" stroke="#FFFFFF" stroke-width="4"></line>
+  <line x1="65" y1="50" x2="85" y2="50" stroke="#FFFFFF" stroke-width="4"></line>
+  <line x1="65" y1="30" x2="85" y2="30" stroke="#FFFFFF" stroke-width="4"></line>
 </svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
 @media (prefers-color-scheme: dark) { :root { filter: none; } }
 </style></svg>
