@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro"
+---
+
+<Layout title="Blogs" description="Blogs" keywords={["blogs"]}>
+    <main class="min-h-screen bg-white">
+        <section class="px-6 py-10">
+            <div class="max-w-5xl mx-auto">
+                <h1 class="text-3xl font-bold mb-4">Blogs</h1>
+                <p class="text-gray-600 mb-4">Welcome to our blog section!</p>
+                <a class=" text-blue-400 underline" href="/blogs/how_to_write_a_formal_email​">how to write a formal email</a>
+            </div>
+        </section>
+    </main>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Blogs",
+            "description": "Blogs",
+            "url": "https://formalizer.app/blogs"
+        }
+    
+</Layout>

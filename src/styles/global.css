@@ -18,24 +18,24 @@ body {
 
 /* 标题样式 */
 .prose h1 {
-  @apply text-3xl font-bold mb-8 text-white;
+  @apply text-3xl font-bold mb-8 text-gray-800;
 }
 
 .prose h2 {
-  @apply text-2xl font-bold mt-12 mb-6 text-white;
+  @apply text-2xl font-bold mt-12 mb-6 text-gray-800;
 }
 
 .prose h3 {
-  @apply text-xl font-semibold mt-8 mb-4 text-white;
+  @apply text-xl font-semibold mt-8 mb-4 text-gray-800;
 }
 
 .prose h4 {
-  @apply text-lg font-semibold mt-6 mb-3 text-white;
+  @apply text-lg font-semibold mt-6 mb-3 text-gray-800;
 }
 
 /* 段落和列表样式 */
 .prose p {
-  @apply mb-6 leading-relaxed text-white;
+  @apply mb-6 leading-relaxed text-gray-800;
 }
 
 .prose ul {
@@ -47,12 +47,12 @@ body {
 }
 
 .prose li {
-  @apply mb-2 text-white;
+  @apply mb-2 text-gray-800;
 }
 
 /* 引用块样式 */
 .prose blockquote {
-  @apply pl-4 border-l-4 border-blue-500 italic my-6 text-white;
+  @apply pl-4 border-l-4 border-blue-500 italic my-6 text-gray-800;
 }
 
 /* 代码块样式 */

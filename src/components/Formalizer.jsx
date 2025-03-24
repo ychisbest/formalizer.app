@@ -25,6 +25,7 @@ const DemoSection = () => {
                 },
                 body: JSON.stringify({
                     model: "random",
+                    temperature: 0.8,
                     stream: true,
                     messages: [
                         {
@@ -120,77 +121,64 @@ you should respond with:
         }
     };
 
-    return (
-        <section id='core' className="bg-gray-50 px-6 py-20">
-            <div className="max-w-5xl mx-auto">
-                <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-                    See The Transformation
-                </h2>
+    useEffect(() => {
+        // Focus on the textarea when component mounts
+        if (textareaRef.current) {
+            textareaRef.current.focus();
+        }
+    }, []);
 
-                <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
-                    <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
-                        <div className="p-6 transition-all duration-300 hover:bg-gray-50">
-                            <h3 className="text-lg font-medium text-gray-900 mb-3">
-                                Before
+    return (
+        <section id='core' className="bg-gray-50 pb-16 pt-10 px-4">
+            <div className="max-w-6xl mx-auto">
+            <h1 className='mb-4 text-xl font-bold mx-auto flex items-center justify-center'>Formalize your Text</h1>
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div className="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                        {/* Input Section */}
+                        <div className="p-8">
+                            <h3 className="text-xl font-medium text-gray-900 mb-4">
+                                Your Text
                             </h3>
-                            {isEditing ? (
-                                <div className='pb-4 h-full'>
-                                    <textarea
-                                        ref={textareaRef}
-                                        className="w-full h-full min-h-[12rem] resize-none focus:border-transparent focus:outline-none p-2 border-none border-gray-300 rounded text-gray-700 transition-all duration-200 focus:ring-2 focus:ring-blue-500"
-                                        value={inputText}
-                                        onChange={(e) => setInputText(e.target.value)}
-                                        placeholder="Enter your informal text here..."
-                                    />
-                                </div>
-                            ) : (
-                                <p className="text-gray-700 mb-4 min-h-[12rem]">
-                                    {inputText}
-                                </p>
-                            )}
+                            <textarea
+                                ref={textareaRef}
+                                className="w-full h-72 resize-none focus:ring-2 focus:ring-blue-500 focus:outline-none p-4 border border-gray-200 rounded-lg text-gray-700"
+                                value={inputText}
+                                onChange={(e) => setInputText(e.target.value)}
+                                placeholder="Enter your informal text here..."
+                            />
                         </div>
-                        <div className="p-6 bg-blue-50 transition-all duration-300 hover:bg-blue-100">
-                            <h3 className="text-lg font-medium text-gray-900 mb-3 flex justify-between items-center">
-                                <span>After Formalizer</span>
+
+                        {/* Output Section */}
+                        <div className="p-8 bg-blue-50">
+                            <div className="flex justify-between items-center mb-4">
+                                <h3 className="text-xl font-medium text-gray-900">
+                                    Formalized Version
+                                </h3>
                                 {outputText && (
                                     <button
                                         onClick={() => copyToClipboard(outputText)}
-                                        className={`text-sm flex items-center px-2 py-1 rounded-md transition-all duration-200 ${
+                                        className={`flex items-center px-3 py-1.5 rounded-md transition-all ${
                                             isCopied 
                                                 ? 'bg-green-100 text-green-700' 
-                                                : 'bg-blue-100 text-blue-600 hover:bg-blue-200 hover:text-blue-800'
+                                                : 'bg-blue-200 text-blue-700 hover:bg-blue-300'
                                         }`}
                                     >
-                                        {isCopied ? (
-                                            <>
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                Copied!
-                                            </>
-                                        ) : (
-                                            <>
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
-                                                </svg>
-                                                Copy
-                                            </>
-                                        )}
+                                        {isCopied ? "Copied!" : "Copy"}
                                     </button>
                                 )}
-                            </h3>
-                            <div className="text-gray-700 mb-4 min-h-[12rem] bg-white p-3 rounded-md shadow-sm overflow-auto transition-all duration-200">
+                            </div>
+                            <div className="bg-white p-4 rounded-lg shadow-sm h-72 overflow-auto">
                                 {isGenerating ? (
                                     <div className="flex items-center justify-center h-full">
-                                        <div className="animate-pulse flex space-x-2">
-                                            <div className="h-2 w-2 bg-blue-400 rounded-full"></div>
-                                            <div className="h-2 w-2 bg-blue-400 rounded-full animation-delay-200"></div>
-                                            <div className="h-2 w-2 bg-blue-400 rounded-full animation-delay-400"></div>
+                                        <div className="flex space-x-2">
+                                            <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce"></div>
+                                            <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce delay-75"></div>
+                                            <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce delay-150"></div>
                                         </div>
                                     </div>
                                 ) : (
-                                    <p className="whitespace-pre-wrap">
-                                        {outputText || "I regret to inform you that I will be delayed for tomorrow's meeting due to heavy traffic and the need to drop off my children. Would it be possible to reschedule the meeting for 30 minutes later? Thank you for your understanding."}
+                                    <p className="whitespace-pre-wrap text-gray-700">
+                                        {outputText || "Your formalized text will appear here."}
                                     </p>
                                 )}
                             </div>
@@ -198,57 +186,28 @@ you should respond with:
                     </div>
                     
                     {suggestions && (
-                        <div className="px-6 py-4 bg-yellow-50 border-t border-yellow-100">
-                            <h3 className="text-lg font-medium text-gray-900 mb-2 flex justify-between items-center">
-                                <span>Suggestions for Improvement</span>
-                                <button
-                                    onClick={() => copyToClipboard(suggestions)}
-                                    className="text-sm flex items-center px-2 py-1 rounded-md transition-all duration-200 bg-yellow-100 text-yellow-700 hover:bg-yellow-200"
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
-                                    </svg>
-                                    Copy Suggestions
-                                </button>
+                        <div className="px-8 py-6 bg-yellow-50 border-t border-yellow-100">
+                            <h3 className="text-xl font-medium text-gray-900 mb-3">
+                                Suggestions
                             </h3>
-                            <div className="bg-white p-3 rounded-md shadow-sm text-gray-700 whitespace-pre-wrap">
+                            <div className="bg-white p-4 rounded-lg shadow-sm text-gray-700">
                                 {suggestions}
                             </div>
                         </div>
                     )}
                     
-                    <div className="bg-gray-50 px-6 py-4 text-center flex justify-center space-x-4">
-                        {isEditing ? (
-                            <button
-                                className={`px-4 py-2 text-white font-medium rounded transition-all duration-300 transform hover:scale-105 ${
-                                    isGenerating || !inputText.trim() 
-                                        ? 'bg-blue-300 cursor-not-allowed' 
-                                        : 'bg-blue-600 hover:bg-blue-700 hover:shadow-md'
-                                }`}
-                                onClick={formalizeText}
-                                disabled={isGenerating || !inputText.trim()}
-                            >
-                                {isGenerating ? (
-                                    <span className="flex items-center">
-                                        <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                        </svg>
-                                        Formalizing...
-                                    </span>
-                                ) : "Formalize Text"}
-                            </button>
-                        ) : (
-                            <button
-                                className="text-blue-600 font-medium hover:text-blue-800 transition-all duration-300 transform hover:scale-105 flex items-center"
-                                onClick={handleTryYourOwn}
-                            >
-                                Try with your own text
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </button>
-                        )}
+                    <div className="p-8 text-center">
+                        <button
+                            className={`px-6 py-3 text-white font-medium rounded-lg text-lg transition-all ${
+                                isGenerating || !inputText.trim() 
+                                    ? 'bg-blue-300 cursor-not-allowed' 
+                                    : 'bg-blue-600 hover:bg-blue-700 hover:shadow-md'
+                            }`}
+                            onClick={formalizeText}
+                            disabled={isGenerating || !inputText.trim()}
+                        >
+                            {isGenerating ? "Formalizing..." : "Formalize Text"}
+                        </button>
                     </div>
                 </div>
             </div>

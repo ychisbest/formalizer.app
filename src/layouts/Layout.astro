@@ -73,13 +73,60 @@ const canonicalURL = Astro.url.href;
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "{Config.name}",
-        "url": "https://{Config.url}",
+        "url": "https://{Config.url}"
       }
     </script>
   </head>
   <body class="min-h-screen bg-white text-gray-800 flex flex-col antialiased">
     <main class="flex-grow">
-      <slot />
+      <header class="fixed w-full bg-white shadow-sm z-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0 flex items-center">
+              <a href="/" class="text-2xl font-bold text-blue-600">Formalizer</a>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+              <a
+                href="/blogs"
+                class="text-gray-600 hover:text-blue-600 transition-colors"
+                >Blogs</a
+              >
+              <a
+                href="/#FAQ"
+                class="text-gray-600 hover:text-blue-600 transition-colors"
+                >FAQ</a
+              >
+            </nav>
+          </div>
+        </div>
+      </header>
+      <div class="mt-16">
+        <slot />
+      </div>
+
+      <footer class="bg-gray-50 px-6 py-12">
+        <div class="max-w-5xl mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+              <span class="text-xl font-bold text-gray-900">Formalizer</span>
+            </div>
+            <div class="flex space-x-6">
+              <a href="#FAQ" class="text-gray-600 hover:text-gray-900">FAQ</a>
+            </div>
+          </div>
+          <div class="flex flex-row items-end justify-end">
+            <a
+              href="https://startupfa.me/s/formalizer?utm_source=formalizer.app"
+              target="_blank">Startup Fame</a
+            >
+          </div>
+          <div
+            class="mt-8 pt-8 border-t border-gray-200 text-center text-gray-500"
+          >
+            <p>© 2025 Formalizer. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </main>
   </body>
 </html>
