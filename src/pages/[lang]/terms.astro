@@ -1,0 +1,97 @@
+---
+import { useTranslations, type Lang, LOCALES } from '@/i18n';
+import Layout from '@/layouts/Base.astro';
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+
+export const getStaticPaths = () =>
+  Object.keys(LOCALES).map((lang) => ({
+    params: { lang },
+  }));
+
+
+---
+
+<Layout title={t({
+  en: "Terms of Service",
+  es: "Términos de Servicio",
+  ar: "شروط الخدمة",
+  pt: "Termos de Serviço",
+  fr: "Conditions d'utilisation",
+  ru: "Условия использования",
+  "zh-cn": "服务条款",
+  ja: "利用規約",
+})}>
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">{t({
+      en: "Terms of Service",
+      es: "Términos de Servicio", 
+      ar: "شروط الخدمة",
+      pt: "Termos de Serviço",
+      fr: "Conditions d'utilisation",
+      ru: "Условия использования",
+      "zh-cn": "服务条款",
+      ja: "利用規約",
+    })}</h1>
+
+    <div class="prose prose-slate dark:prose-invert">
+      <p class="mb-4">{t({
+        en: "Last updated: January 1, 2024",
+        es: "Última actualización: 1 de enero de 2024",
+        ar: "آخر تحديث: 1 يناير 2024",
+        pt: "Última atualização: 1 de janeiro de 2024",
+        fr: "Dernière mise à jour: 1 janvier 2024",
+        ru: "Последнее обновление: 1 января 2024",
+        "zh-cn": "最后更新时间：2024年1月1日",
+        ja: "最終更新日：2024年1月1日",
+      })}</p>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">{t({
+          en: "1. Agreement to Terms",
+          es: "1. Acuerdo con los Términos",
+          ar: "1. الموافقة على الشروط",
+          pt: "1. Acordo com os Termos",
+          fr: "1. Accord avec les Conditions",
+          ru: "1. Согласие с Условиями",
+          "zh-cn": "1. 条款协议",
+          ja: "1. 規約への同意",
+        })}</h2>
+        <p class="mb-4">{t({
+          en: "By accessing or using our services, you agree to be bound by these Terms of Service.",
+          es: "Al acceder o utilizar nuestros servicios, usted acepta estar sujeto a estos Términos de Servicio.",
+          ar: "من خلال الوصول إلى خدماتنا أو استخدامها، فإنك توافق على الالتزام بشروط الخدمة هذه.",
+          pt: "Ao acessar ou usar nossos serviços, você concorda em estar vinculado a estes Termos de Serviço.",
+          fr: "En accédant à nos services ou en les utilisant, vous acceptez d'être lié par ces Conditions d'utilisation.",
+          ru: "Получая доступ к нашим услугам или используя их, вы соглашаетесь соблюдать настоящие Условия использования.",
+          "zh-cn": "访问或使用我们的服务即表示您同意受这些服务条款的约束。",
+          ja: "本サービスにアクセスまたは使用することにより、あなたはこの利用規約に同意したものとみなされます。",
+        })}</p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">{t({
+          en: "2. Changes to Terms",
+          es: "2. Cambios en los Términos",
+          ar: "2. التغييرات في الشروط",
+          pt: "2. Alterações nos Termos",
+          fr: "2. Modifications des Conditions",
+          ru: "2. Изменения в Условиях",
+          "zh-cn": "2. 条款变更",
+          ja: "2. 規約の変更",
+        })}</h2>
+        <p class="mb-4">{t({
+          en: "We reserve the right to modify these terms at any time. We will notify users of any changes by updating the date at the top of this page.",
+          es: "Nos reservamos el derecho de modificar estos términos en cualquier momento. Notificaremos a los usuarios sobre cualquier cambio actualizando la fecha en la parte superior de esta página.",
+          ar: "نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سنقوم بإخطار المستخدمين بأي تغييرات من خلال تحديث التاريخ في أعلى هذه الصفحة.",
+          pt: "Reservamos o direito de modificar estes termos a qualquer momento. Notificaremos os usuários sobre quaisquer alterações atualizando a data no topo desta página.",
+          fr: "Nous nous réservons le droit de modifier ces conditions à tout moment. Nous informerons les utilisateurs de tout changement en mettant à jour la date en haut de cette page.",
+          ru: "Мы оставляем за собой право изменять эти условия в любое время. Мы будем уведомлять пользователей о любых изменениях, обновляя дату в верхней части этой страницы.",
+          "zh-cn": "我们保留随时修改这些条款的权利。我们会通过更新本页顶部的日期来通知用户任何变更。",
+          ja: "当社は、これらの規約をいつでも変更する権利を有します。変更があった場合は、このページの上部の日付を更新することでユーザーに通知します。",
+        })}</p>
+      </section>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,19 @@
+- 这是astro工程,编写代码时使用tailwindcss
+- 网站风格使用 notion like 风格
+- 生成时使用astro-icon图标,如下例子
+```
+<Icon name="mdi:home" />
+```
+- 网站采用多语言开发,在编写多语言文本时使用下面方式
+```
+{t({
+en: "Home",
+es: "Inicio",
+ar: "الصفحة الرئيسية",
+pt: "Início",
+fr: "Accueil",
+ru: "Главная",
+"zh-cn": "首页",
+ja: "ホーム",
+})}
+```

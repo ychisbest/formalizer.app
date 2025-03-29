@@ -1,23 +1,38 @@
 {
-  "name": "ychgames",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/react": "^4.2.0",
-    "@astrojs/sitemap": "^3.2.1",
-    "@tailwindcss/vite": "^4.0.3",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "astro": "^5.2.5",
-    "marked": "^15.0.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwindcss": "^4.0.3"
-  }
+	"name": "astro-i18n-starter",
+	"description": "A starter for Astro with i18n support",
+	"version": "3.0.0",
+	"private": false,
+	"license": "MIT",
+	"homepage": "https://astro-i18n-starter.pages.dev/",
+	"engines": {
+		"node": ">=20"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev --open",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.9.4",
+		"@astrojs/mdx": "^4.0.7",
+		"@astrojs/react": "^4.2.2",
+		"@astrojs/rss": "^4.0.11",
+		"@astrojs/sitemap": "^3.2.1",
+		"@tailwindcss/vite": "^4.0.17",
+		"@types/react": "^19.0.12",
+		"@types/react-dom": "^19.0.4",
+		"astro": "^5.1.9",
+		"astro-icon": "^1.1.5",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"tailwindcss": "^4.0.17",
+		"typescript": "^5.4.5"
+	},
+	"devDependencies": {
+		"@iconify-json/emojione": "^1.2.1",
+		"@iconify-json/mdi": "^1.2.3"
+	}
 }

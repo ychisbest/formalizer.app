@@ -1,181 +1,82 @@
 ---
-import Formalizer from "../components/Formalizer";
-import Layout from "../layouts/Layout.astro";
+// Redirect to Top page for user's system locale
+// Basically, you don't need to edit this file.
+
+import {
+  useTranslations,
+  getLocalePaths,
+  LOCALES,
+  DEFAULT_LOCALE,
+  type Lang,
+} from "@/i18n";
+import { SITE_TITLE, SITE_DESCRIPTION, X_ACCOUNT } from "@/consts";
+
+const t = useTranslations(Astro.currentLocale as Lang);
+const langs = Object.keys(LOCALES);
+const baseUrl = import.meta.env.PROD ? Astro.site : "/";
+const defaultLocale = DEFAULT_LOCALE;
 ---
 
-<Layout
-    title="Formalizer - Make Your Text Professional With Ease"
-    description="Transform casual text into professional content with Formalizer. Perfect for academics, business emails, and more."
-    keywords={[
-        "formalizer",
-        "text formalization",
-        "professional writing",
-        "text transformation",
-    ]}
->
+<html lang={DEFAULT_LOCALE}>
+  <head>
+    <meta charset="UTF-8" />
+    <title>redirect...</title>
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="generator" content={Astro.generator} />
+    {
+      getLocalePaths(Astro.url).map((props) => (
+        <link
+          rel="alternate"
+          hreflang={LOCALES[props.lang].lang || props.lang}
+          href={Astro.site?.origin + props.path}
+        />
+      ))
+    }
 
-    <main class="min-h-screen bg-white">
-        <Formalizer client:load />
+    <!-- icon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" sizes="192x192" href="/android-chrome.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="color-scheme" content="light dark" />
 
-        <!-- Features Section -->
-        <section class="px-6 py-10">
-            <div class="max-w-5xl mx-auto">
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="text-center">
-                        <div
-                            class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-8 w-8 text-blue-600"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">
-                            Instant Formalization
-                        </h3>
-                        <p class="text-gray-600">
-                            Transform your casual writing into formal text in
-                            seconds, not hours.
-                        </p>
-                    </div>
+    <!-- OGP -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={t(SITE_TITLE)} />
+    <meta property="og:site_name" content={t(SITE_TITLE)} />
+    <meta property="og:description" content={t(SITE_DESCRIPTION)} />
+    <meta property="og:image" content={Astro.site + "ogp.png"} />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:locale" content={DEFAULT_LOCALE} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content={t(X_ACCOUNT)} />
 
-                    <div class="text-center">
-                        <div
-                            class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-8 w-8 text-blue-600"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                                ></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">
-                            Context-Aware
-                        </h3>
-                        <p class="text-gray-600">
-                            Maintains your original meaning while enhancing
-                            vocabulary and structure.
-                        </p>
-                    </div>
+    <noscript>
+      <meta
+        http-equiv="refresh"
+        content={`0;url=${baseUrl + DEFAULT_LOCALE}/`}
+      />
+    </noscript>
 
-                    <div class="text-center">
-                        <div
-                            class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-8 w-8 text-blue-600"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                ></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">
-                            Multiple Use Cases
-                        </h3>
-                        <p class="text-gray-600">
-                            Perfect for academics, business emails, cover
-                            letters, and official documents.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <script is:inline define:vars={{ langs, baseUrl, defaultLocale }}>
+      if (
+        localStorage.selectedLang &&
+        langs.includes(localStorage.selectedLang)
+      ) {
+        location.href = `${baseUrl + localStorage.selectedLang}/`;
+      } else {
+        const browserLang = navigator.language.toLowerCase();
 
-        <div>
-            <!-- FAQ Section -->
-            <section id="FAQ" class="px-6 py-20 bg-gray-50">
-                <div class="max-w-5xl mx-auto">
-                    <h2
-                        class="text-3xl font-bold text-center mb-16 text-gray-900"
-                    >
-                        Frequently Asked Questions
-                    </h2>
-
-                    <div class="space-y-8">
-                        <div class="bg-white rounded-lg shadow-sm p-6">
-                            <h3
-                                class="text-xl font-semibold text-gray-900 mb-2"
-                            >
-                                How does Formalizer work?
-                            </h3>
-                            <p class="text-gray-600">
-                                Formalizer uses advanced natural language
-                                processing algorithms to analyze your text and
-                                transform it into professional language while
-                                preserving your original meaning.
-                            </p>
-                        </div>
-
-                        <div class="bg-white rounded-lg shadow-sm p-6">
-                            <h3
-                                class="text-xl font-semibold text-gray-900 mb-2"
-                            >
-                                Is my data secure?
-                            </h3>
-                            <p class="text-gray-600">
-                                Yes, we take privacy seriously. Your text is
-                                processed securely and we don't store any of
-                                your content after transformation is complete.
-                            </p>
-                        </div>
-
-                        <div class="bg-white rounded-lg shadow-sm p-6">
-                            <h3
-                                class="text-xl font-semibold text-gray-900 mb-2"
-                            >
-                                Can Formalizer handle different languages?
-                            </h3>
-                            <p class="text-gray-600">
-                                Currently, Formalizer primarily supports
-                                English, with beta support for Spanish, French,
-                                German, and Chinese. We're actively working on
-                                expanding our language capabilities to include
-                                more languages in the near future.
-                            </p>
-                        </div>
-
-                        <div class="bg-white rounded-lg shadow-sm p-6">
-                            <h3
-                                class="text-xl font-semibold text-gray-900 mb-2"
-                            >
-                                Is there a limit to how much text I can
-                                formalize?
-                            </h3>
-                            <p class="text-gray-600">
-                                The product is currently free. If you have more
-                                advanced feature requirements, please contact
-                                us./p>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-</Layout>
+        if (langs.includes(browserLang)) {
+          location.href = `${baseUrl + browserLang}/`;
+        } else if (langs.includes(browserLang.split("-")[0])) {
+          location.href = `${baseUrl + browserLang.split("-")[0]}/`;
+        } else {
+          location.href = `${baseUrl + defaultLocale}/`;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>redirect...</h1>
+  </body>
+</html>

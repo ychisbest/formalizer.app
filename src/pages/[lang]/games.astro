@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/Base.astro";
+import { LOCALES, useTranslations, type Lang } from "@/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getCollection } from "astro:content";
+import GameList from "@/components/GameList.astro";
+
+const t = useTranslations(Astro.currentLocale as Lang);
+const locale = Astro.currentLocale as Lang;
+
+const games = await getCollection("game");
+
+export const getStaticPaths = () =>
+    Object.keys(LOCALES).map((lang) => ({
+        params: { lang },
+    }));
+---
+
+<Layout>
+    <h1 class="text-center py-4 text-3xl font-bold text-gray-500">
+        {
+            t({
+                ja: "ゲーム",
+                en: "All Games",
+                "zh-cn": "游戏",
+                ar: "ألعاب",
+                es: "Juegos",
+                pt: "Jogos",
+                fr: "Jeux",
+                ru: "Игры",
+            })
+        }
+    </h1>
+
+    <GameList />
+</Layout>

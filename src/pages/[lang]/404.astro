@@ -1,0 +1,109 @@
+---
+import { LOCALES, localeParams, useTranslations, type Lang } from "@/i18n";
+import Layout from "@/layouts/Base.astro";
+const t = useTranslations(Astro.currentLocale as Lang);
+
+const title = t({
+  ja: "ページが見つかりません",
+  en: "Page Not Found",
+  "zh-cn": "页面未找到",
+  ar: "الصفحة غير موجودة",
+  es: "Página no encontrada",
+  pt: "Página não encontrada",
+  fr: "Page non trouvée",
+  ru: "Страница не найдена",
+});
+
+export const getStaticPaths = () => localeParams;
+---
+
+<Layout {title}>
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 p-8">
+      <h1 class="flex items-center gap-3 text-3xl font-bold mb-6">
+        <span class="text-gray-400">404</span>
+        <span>{title}</span>
+      </h1>
+
+      <p class="text-gray-600 dark:text-gray-400 mb-8">
+        {
+          t({
+            ja: "お探しのページは見つかりませんでした。トップに戻るか、他の言語でお試しください。",
+            en: "The page you are looking for could not be found. Please return to the top or try another language.",
+            "zh-cn": "您要查找的页面不存在。请返回顶部或尝试其他语言。",
+            ar: "الصفحة التي تبحث عنها غير موجودة. يرجى العودة إلى الأعلى أو تجربة لغة أخرى.",
+            es: "La página que estás buscando no se pudo encontrar. Por favor, regresa al inicio o prueba con otro idioma.",
+            pt: "A página que você está procurando não pôde ser encontrada. Por favor, retorne ao topo ou tente outro idioma.",
+            fr: "La page que vous recherchez est introuvable. Veuillez retourner en haut ou essayer une autre langue.",
+            ru: "Страница, которую вы ищете, не найдена. Пожалуйста, вернитесь на главную или попробуйте другой язык.",
+          })
+        }
+      </p>
+
+      <a href="/" class="inline-flex items-center px-5 py-2.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors">
+        {
+          t({
+            ja: "トップページ",
+            en: "Top Page",
+            "zh-cn": "首页",
+            ar: "الصفحة الرئيسية",
+            es: "Página principal",
+            pt: "Página principal",
+            fr: "Page d'accueil",
+            ru: "Главная страница",
+          })
+        }
+      </a>
+
+      <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+        <h2 class="text-xl font-medium mb-4">
+          {
+            t({
+              ja: "他の言語で見る",
+              en: "View in other languages",
+              "zh-cn": "用其他语言查看",
+              ar: "عرض بلغات أخرى",
+              es: "Ver en otros idiomas",
+              pt: "Ver em outros idiomas",
+              fr: "Voir dans d'autres langues",
+              ru: "Просмотр на других языках",
+            })
+          }
+        </h2>
+
+        <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+          {
+            Object.entries(LOCALES).map(([lang, { label, dir }]) => (
+              <li>
+                <a
+                  href={`/${lang}/`}
+                  data-lang-path={lang}
+                  onclick={`localStorage.selectedLang = "${lang}"`}
+                  dir={dir || null}
+                  class="block p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-blue-600 dark:text-blue-400"
+                >
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script is:inline>
+  if (localStorage.userAccessPath) {
+    history.replaceState("", "", localStorage.userAccessPath);
+
+    document.querySelectorAll("a[data-lang-path]").forEach((a) => {
+      const pathnames = localStorage.userAccessPath.split("/");
+      const lang = a.getAttribute("data-lang-path");
+      pathnames[1] = lang;
+      a.href = pathnames.join("/");
+    });
+
+    localStorage.removeItem("userAccessPath");
+  }
+</script>

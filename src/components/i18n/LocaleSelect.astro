@@ -1,0 +1,43 @@
+---
+// Select UI to switch between locales.
+
+import { getLocalePaths, LOCALES } from "@/i18n";
+import { Icon } from "astro-icon/components";
+---
+
+<div class="relative inline-flex items-center">
+  <Icon name="mdi:translate" class="h-4 w-4 text-gray-500 absolute left-2" />
+  <select 
+    data-languageSelect
+    class="appearance-none pl-8 pr-8 py-1.5 bg-gray-50 border border-gray-200 rounded-md text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-200 hover:bg-gray-100 transition-colors"
+  >
+    {
+      getLocalePaths(Astro.url).map(({ path, lang }) => {
+        return (
+          <option
+            label={`${LOCALES[lang].label}`}
+            value={path}
+            data-lang={lang}
+            selected={lang === Astro.currentLocale}
+            dir={LOCALES[lang].dir || null}
+          />
+        );
+      })
+      
+    }
+  </select>
+
+  <Icon name="mdi:chevron-down" class="h-4 w-4 text-gray-500 absolute right-2 pointer-events-none" />
+</div>
+
+<script is:inline>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>

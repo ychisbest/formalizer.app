@@ -1,0 +1,120 @@
+---
+import { useTranslations, type Lang, LOCALES } from '@/i18n';
+import Layout from '@/layouts/Base.astro';
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+
+export const getStaticPaths = () =>
+  Object.keys(LOCALES).map((lang) => ({
+    params: { lang },
+  }));
+
+
+---
+
+<Layout title={t({
+  en: "Privacy Policy",
+  es: "Política de Privacidad",
+  ar: "سياسة الخصوصية",
+  pt: "Política de Privacidade",
+  fr: "Politique de Confidentialité",
+  ru: "Политика конфиденциальности",
+  "zh-cn": "隐私政策",
+  ja: "プライバシーポリシー"
+})} >
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">{t({
+      en: "Privacy Policy",
+      es: "Política de Privacidad", 
+      ar: "سياسة الخصوصية",
+      pt: "Política de Privacidade",
+      fr: "Politique de Confidentialité",
+      ru: "Политика конфиденциальности",
+      "zh-cn": "隐私政策",
+      ja: "プライバシーポリシー"
+    })}</h1>
+
+    <div class="prose prose-slate max-w-none">
+      <p class="mb-6">{t({
+        en: "Last updated: January 1, 2024",
+        es: "Última actualización: 1 de enero de 2024",
+        ar: "آخر تحديث: 1 يناير 2024",
+        pt: "Última atualização: 1 de janeiro de 2024",
+        fr: "Dernière mise à jour: 1 janvier 2024",
+        ru: "Последнее обновление: 1 января 2024",
+        "zh-cn": "最后更新时间：2024年1月1日",
+        ja: "最終更新日：2024年1月1日"
+      })}</p>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">{t({
+          en: "Information Collection and Use",
+          es: "Recopilación y Uso de Información",
+          ar: "جمع المعلومات واستخدامها",
+          pt: "Coleta e Uso de Informações",
+          fr: "Collecte et Utilisation des Informations",
+          ru: "Сбор и использование информации",
+          "zh-cn": "信息收集与使用",
+          ja: "情報収集と使用"
+        })}</h2>
+        <p class="mb-4">{t({
+          en: "We collect information that you provide directly to us when using our services.",
+          es: "Recopilamos información que nos proporciona directamente al utilizar nuestros servicios.",
+          ar: "نجمع المعلومات التي تقدمها لنا مباشرة عند استخدام خدماتنا.",
+          pt: "Coletamos informações que você fornece diretamente para nós ao usar nossos serviços.",
+          fr: "Nous collectons les informations que vous nous fournissez directement lors de l'utilisation de nos services.",
+          ru: "Мы собираем информацию, которую вы предоставляете нам напрямую при использовании наших услуг.",
+          "zh-cn": "我们收集您在使用我们的服务时直接提供给我们的信息。",
+          ja: "当社のサービスを利用する際に直接提供される情報を収集します。"
+        })}</p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">{t({
+          en: "Data Security",
+          es: "Seguridad de Datos",
+          ar: "أمن البيانات",
+          pt: "Segurança dos Dados",
+          fr: "Sécurité des Données",
+          ru: "Безопасность данных",
+          "zh-cn": "数据安全",
+          ja: "データセキュリティ"
+        })}</h2>
+        <p class="mb-4">{t({
+          en: "We take reasonable measures to help protect your personal information from loss, theft, misuse, and unauthorized access.",
+          es: "Tomamos medidas razonables para ayudar a proteger su información personal contra pérdida, robo, mal uso y acceso no autorizado.",
+          ar: "نتخذ تدابير معقولة للمساعدة في حماية معلوماتك الشخصية من الفقدان والسرقة وسوء الاستخدام والوصول غير المصرح به.",
+          pt: "Tomamos medidas razoáveis para ajudar a proteger suas informações pessoais contra perda, roubo, uso indevido e acesso não autorizado.",
+          fr: "Nous prenons des mesures raisonnables pour aider à protéger vos informations personnelles contre la perte, le vol, l'utilisation abusive et l'accès non autorisé.",
+          ru: "Мы принимаем разумные меры для защиты ваших персональных данных от потери, кражи, неправомерного использования и несанкционированного доступа.",
+          "zh-cn": "我们采取合理措施帮助保护您的个人信息免遭丢失、盗窃、滥用和未经授权的访问。",
+          ja: "個人情報の紛失、盗難、悪用、不正アクセスから保護するため、合理的な対策を講じています。"
+        })}</p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">{t({
+          en: "Contact Us",
+          es: "Contáctenos",
+          ar: "اتصل بنا",
+          pt: "Entre em Contato",
+          fr: "Contactez-nous",
+          ru: "Свяжитесь с нами",
+          "zh-cn": "联系我们",
+          ja: "お問い合わせ"
+        })}</h2>
+        <p>{t({
+          en: "If you have any questions about this Privacy Policy, please contact us.",
+          es: "Si tiene alguna pregunta sobre esta Política de Privacidad, contáctenos.",
+          ar: "إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى الاتصال بنا.",
+          pt: "Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco.",
+          fr: "Si vous avez des questions concernant cette Politique de Confidentialité, veuillez nous contacter.",
+          ru: "Если у вас есть вопросы об этой Политике конфиденциальности, пожалуйста, свяжитесь с нами.",
+          "zh-cn": "如果您对本隐私政策有任何问题，请联系我们。",
+          ja: "このプライバシーポリシーについてご質問がある場合は、お問い合わせください。"
+        })}</p>
+      </section>
+    </div>
+  </main>
+</Layout>

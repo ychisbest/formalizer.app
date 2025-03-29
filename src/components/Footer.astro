@@ -1,0 +1,96 @@
+---
+import { useTranslations, type Lang,LOCALES } from "@/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { Icon } from "astro-icon/components";
+import { SITE_TITLE } from "@/consts";
+const t = useTranslations(Astro.currentLocale as Lang);
+
+const locale = Astro.currentLocale as Lang;
+
+const locales = LOCALES;
+
+---
+
+<footer class="border-t border-[rgba(55,53,47,0.09)] py-4">
+
+    <div class="flex gap-4 items-end justify-center flex-wrap">
+        {Object.keys(locales).map((loc: string) => {
+            const flagIcons = {
+                'en': 'emojione:flag-for-united-states',
+                'es': 'emojione:flag-for-spain', 
+                'ar': 'emojione:flag-for-saudi-arabia',
+                'pt': 'emojione:flag-for-portugal',
+                'fr': 'emojione:flag-for-france',
+                'ru': 'emojione:flag-for-russia',
+                'zh-cn': 'emojione:flag-for-china',
+                'ja': 'emojione:flag-for-japan'
+            };
+            return (
+                <a
+                    href={getRelativeLocaleUrl(loc, Astro.url.pathname.replace(/^\/[^/]+/, ""))}
+                    class="flex items-center gap-1.5 px-2 py-1 rounded-md text-[rgba(55,53,47,0.65)] hover:text-[rgba(55,53,47,0.85)] hover:bg-[rgba(55,53,47,0.08)] transition-colors text-sm"
+                >
+                    <Icon name={flagIcons[loc as keyof typeof flagIcons]} class="w-4 h-4" />
+                    {locales[loc as keyof typeof locales].label}
+                </a>
+            );
+        })}
+    </div>
+    <div class="border-t border-[rgba(55,53,47,0.09)] mt-4 mb-4"></div>
+
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 px-4">
+        <div class="text-[rgba(55,53,47,0.65)] text-sm">
+            {
+                t({
+                    en: `© ${new Date().getFullYear()} ${SITE_TITLE}. All rights reserved.`,
+                    ar: `© ${new Date().getFullYear()} ${SITE_TITLE}. جميع الحقوق محفوظة.`,
+                    es: `© ${new Date().getFullYear()} ${SITE_TITLE}. Todos los derechos reservados.`,
+                    fr: `© ${new Date().getFullYear()} ${SITE_TITLE}. Tous droits réservés.`,
+                    ja: `© ${new Date().getFullYear()} ${SITE_TITLE}. 全著作権所有。`,
+                    pt: `© ${new Date().getFullYear()} ${SITE_TITLE}. Todos os direitos reservados.`,
+                    ru: `© ${new Date().getFullYear()} ${SITE_TITLE}. Все права защищены.`,
+                    "zh-cn": `© ${new Date().getFullYear()} ${SITE_TITLE}. 保留所有权利。`,
+                })
+            }
+        </div>
+        <div class="flex items-center gap-4">
+            <nav class="flex gap-4">
+                <a
+                    href={getRelativeLocaleUrl(locale, "/privacy")}
+                    class="text-[rgba(55,53,47,0.65)] hover:text-[rgba(55,53,47,0.85)] text-sm"
+                >
+                    {
+                        t({
+                            en: "Privacy Policy",
+                            es: "Política de Privacidad",
+                            ar: "سياسة الخصوصية",
+                            pt: "Política de Privacidade",
+                            fr: "Politique de Confidentialité",
+                            ru: "Политика Конфиденциальности",
+                            "zh-cn": "隐私政策",
+                            ja: "プライバシーポリシー",
+                        })
+                    }
+                </a>
+                <a
+                    href={getRelativeLocaleUrl(locale, "/terms")}
+                    class="text-[rgba(55,53,47,0.65)] hover:text-[rgba(55,53,47,0.85)] text-sm"
+                >
+                    {
+                        t({
+                            en: "Terms of Service",
+                            es: "Términos de Servicio",
+                            ar: "شروط الخدمة",
+                            pt: "Termos de Serviço",
+                            fr: "Conditions d'Utilisation",
+                            ru: "Условия Использования",
+                            "zh-cn": "服务条款",
+                            ja: "利用規約",
+                        })
+                    }
+                </a>
+            </nav>
+        </div>
+    </div>
+
+</footer>

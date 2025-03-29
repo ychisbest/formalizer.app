@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+
+const games = await getCollection("game");
+---
+
+<div class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+    {
+      games.map((game) => (
+        <a 
+          href={`/game/${game.data.slug}`} 
+          class="block bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 hover:shadow-xl"
+        >
+          <div class="relative pb-[75%]">
+            <img 
+              src={game.data.thumb} 
+              alt={game.data.title} 
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-2 bg-gradient-to-r from-purple-600 to-blue-500">
+            <h3 class="text-sm font-medium text-white truncate">{game.data.title}</h3>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</div>

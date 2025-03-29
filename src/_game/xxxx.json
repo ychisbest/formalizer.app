@@ -1,0 +1,196 @@
+{
+   "id": "930",
+   "title": "Angry Chec3kers",
+   "slug": "angry-che3ckers",
+   "description": {
+      "en": "Common checkers are boring? Try angry checkers! Try to beat enemy checkers out of the board. there are 3 game modes. 1. Multiplayer - you play versus another random player via internet. 2. Single Player - you play versus AI. 3. Hot Seat - you play versus your friend on the same device.",
+      "es": "¿Las damas comunes son aburridas? ¡Prueba las damas furiosas! Intenta sacar las fichas enemigas del tablero. Hay 3 modos de juego. 1. Multijugador - juegas contra otro jugador aleatorio por internet. 2. Un jugador - juegas contra la IA. 3. Hot Seat - juegas contra tu amigo en el mismo dispositivo.",
+      "ar": "هل لعبة الداما التقليدية مملة؟ جرب الداما الغاضبة! حاول ضرب قطع الداما الخصم خارج اللوحة. هناك 3 أوضاع للعبة. 1. متعدد اللاعبين - تلعب ضد لاعب عشوائي آخر عبر الإنترنت. 2. لاعب واحد - تلعب ضد الذكاء الاصطناعي. 3. المقعد الساخن - تلعب ضد صديقك على نفس الجهاز.",
+      "pt": "Damas comuns são chatas? Experimente damas furiosas! Tente tirar as peças inimigas do tabuleiro. existem 3 modos de jogo. 1. Multijogador - você joga contra outro jogador aleatório pela internet. 2. Um jogador - você joga contra a IA. 3. Hot Seat - você joga contra seu amigo no mesmo dispositivo.",
+      "fr": "Les dames ordinaires sont ennuyeuses? Essayez les dames en colère! Essayez de battre les pions ennemis hors du plateau. il y a 3 modes de jeu. 1. Multijoueur - vous jouez contre un autre joueur aléatoire via internet. 2. Solo - vous jouez contre l'IA. 3. Hot Seat - vous jouez contre votre ami sur le même appareil.",
+      "ru": "Обычные шашки скучны? Попробуйте злые шашки! Попытайтесь выбить вражеские шашки с доски. есть 3 режима игры. 1. Мультиплеер - вы играете против случайного игрока через интернет. 2. Одиночная игра - вы играете против ИИ. 3. Горячее место - вы играете против друга на одном устройстве.",
+      "zh-cn": "普通跳棋无聊吗？试试愤怒跳棋！尝试将敌方棋子击出棋盘。有3种游戏模式。1. 多人游戏 - 通过互联网与另一位随机玩家对战。2. 单人游戏 - 与AI对战。3. 热座 - 与朋友在同一设备上对战。",
+      "ja": "一般のチェッカーはつまらない？アングリーチェッカーを試してみよう！敵のチェッカーをボードから打ち出そう。ゲームモードは3つあります。1. マルチプレイヤー - インターネットを通じて他のランダムなプレイヤーと対戦します。2. シングルプレイヤー - AIと対戦します。3. ホットシート - 同じデバイスで友達と対戦します。"
+   },
+   "instructions": {
+      "en": "Touch or Mouse",
+      "es": "Táctil o Ratón",
+      "ar": "اللمس أو الماوس",
+      "pt": "Toque ou Mouse",
+      "fr": "Tactile ou Souris",
+      "ru": "Сенсорный экран или Мышь",
+      "zh-cn": "触摸或鼠标",
+      "ja": "タッチまたはマウス"
+   },
+   "url": "https:\/\/html5.gamemonetize.com\/skma0pcrooj5rpuhitzk7etjqfsctr3l\/",
+   "category": ".IO",
+   "tags": "2 Player, Action, Arena, IO, Multiplayer",
+   "thumb": "https:\/\/img.gamemonetize.com\/skma0pcrooj5rpuhitzk7etjqfsctr3l\/512x384.jpg",
+   "width": "960",
+   "height": "640",
+   "developer": {
+      "en": "Unknown",
+      "es": "Desconocido",
+      "ar": "غير معروف",
+      "pt": "Desconhecido",
+      "fr": "Inconnu",
+      "ru": "Неизвестный",
+      "zh-cn": "未知",
+      "ja": "不明"
+   },
+   "publisher": {
+      "en": "GameMonetize",
+      "es": "GameMonetize",
+      "ar": "GameMonetize",
+      "pt": "GameMonetize",
+      "fr": "GameMonetize",
+      "ru": "GameMonetize",
+      "zh-cn": "GameMonetize",
+      "ja": "GameMonetize"
+   },
+   "releaseDate": "2023-01-15",
+   "features": {
+      "en": [
+         "Physics-based checker gameplay",
+         "Knock opponent pieces off the board",
+         "Online Multiplayer mode",
+         "Single Player vs AI",
+         "Hot Seat mode for 2 players",
+         "Action-packed twist on a classic"
+      ],
+      "es": [
+         "Jugabilidad de damas basada en física",
+         "Derriba las piezas del oponente fuera del tablero",
+         "Modo Multijugador en línea",
+         "Un jugador vs IA",
+         "Modo Hot Seat para 2 jugadores",
+         "Giro lleno de acción a un clásico"
+      ],
+      "ar": [
+         "لعب الداما القائم على الفيزياء",
+         "اطرح قطع الخصم خارج اللوحة",
+         "وضع متعدد اللاعبين عبر الإنترنت",
+         "لاعب واحد ضد الذكاء الاصطناعي",
+         "وضع المقعد الساخن للاعبين",
+         "لمسة مليئة بالإثارة على لعبة كلاسيكية"
+      ],
+      "pt": [
+         "Jogabilidade de damas baseada em física",
+         "Derrube as peças do oponente para fora do tabuleiro",
+         "Modo Multijogador online",
+         "Um jogador vs IA",
+         "Modo Hot Seat para 2 jogadores",
+         "Reviravolta cheia de ação em um clássico"
+      ],
+      "fr": [
+         "Gameplay de dames basé sur la physique",
+         "Faites tomber les pièces adverses hors du plateau",
+         "Mode Multijoueur en ligne",
+         "Solo contre IA",
+         "Mode Hot Seat pour 2 joueurs",
+         "Une touche pleine d'action à un classique"
+      ],
+      "ru": [
+         "Геймплей шашек на основе физики",
+         "Выбивайте фигуры противника с доски",
+         "Многопользовательский онлайн-режим",
+         "Одиночная игра против ИИ",
+         "Режим Hot Seat для 2 игроков",
+         "Захватывающий поворот классической игры"
+      ],
+      "zh-cn": [
+         "基于物理的跳棋玩法",
+         "将对手棋子撞出棋盘",
+         "在线多人模式",
+         "单人对战AI",
+         "供2名玩家使用的热座模式",
+         "经典游戏的动作化变体"
+      ],
+      "ja": [
+         "物理ベースのチェッカーゲームプレイ",
+         "相手の駒をボードから叩き出す",
+         "オンラインマルチプレイヤーモード",
+         "シングルプレイヤー対AI",
+         "2人用ホットシートモード",
+         "クラシックゲームのアクション満載ツイスト"
+      ]
+   },
+   "keywords": {
+      "en": "checkers, angry birds style, physics game, board game, multiplayer, io game, strategy, 2 player, online game, mobile game",
+      "es": "damas, estilo angry birds, juego de física, juego de mesa, multijugador, juego io, estrategia, 2 jugadores, juego en línea, juego móvil",
+      "ar": "داما, أسلوب أنجري بيردز, لعبة فيزياء, لعبة لوحية, متعدد اللاعبين, لعبة io, استراتيجية, لاعبان, لعبة على الإنترنت, لعبة جوال",
+      "pt": "damas, estilo angry birds, jogo de física, jogo de tabuleiro, multijogador, jogo io, estratégia, 2 jogadores, jogo online, jogo para celular",
+      "fr": "dames, style angry birds, jeu de physique, jeu de société, multijoueur, jeu io, stratégie, 2 joueurs, jeu en ligne, jeu mobile",
+      "ru": "шашки, стиль angry birds, физическая игра, настольная игра, мультиплеер, io игра, стратегия, 2 игрока, онлайн игра, мобильная игра",
+      "zh-cn": "跳棋, 愤怒的小鸟风格, 物理游戏, 棋盘游戏, 多人游戏, io游戏, 策略, 双人游戏, 在线游戏, 手机游戏",
+      "ja": "チェッカー, アングリーバード風, 物理ゲーム, ボードゲーム, マルチプレイヤー, ioゲーム, ストラテジー, 2人用, オンラインゲーム, モバイルゲーム"
+   },
+   "faqs": [
+      {
+         "question": {
+            "en": "How is Angry Checkers different from regular checkers?",
+            "es": "¿En qué se diferencian las Damas Furiosas de las damas normales?",
+            "ar": "كيف تختلف الداما الغاضبة عن الداما العادية؟",
+            "pt": "Como o Angry Checkers é diferente das damas normais?",
+            "fr": "En quoi Angry Checkers est-il différent des dames classiques?",
+            "ru": "Чем Злые Шашки отличаются от обычных шашек?",
+            "zh-cn": "愤怒跳棋与普通跳棋有何不同？",
+            "ja": "アングリーチェッカーは通常のチェッカーとどう違いますか？"
+         },
+         "answer": {
+            "en": "Instead of capturing pieces by jumping, you use physics to knock your opponent's pieces off the board, similar to games like Angry Birds or billiards. The goal is to clear the opponent's pieces.",
+            "es": "En lugar de capturar piezas saltando, usas la física para sacar las piezas de tu oponente del tablero, similar a juegos como Angry Birds o billar. El objetivo es eliminar las piezas del oponente.",
+            "ar": "بدلاً من أسر القطع بالقفز، تستخدم الفيزياء لضرب قطع خصمك خارج اللوحة، على غرار ألعاب مثل Angry Birds أو البلياردو. الهدف هو إزالة قطع الخصم.",
+            "pt": "Em vez de capturar peças pulando, você usa a física para derrubar as peças do seu oponente para fora do tabuleiro, semelhante a jogos como Angry Birds ou bilhar. O objetivo é limpar as peças do oponente.",
+            "fr": "Au lieu de capturer des pièces en sautant par-dessus, vous utilisez la physique pour éjecter les pièces de votre adversaire hors du plateau, comme dans des jeux comme Angry Birds ou le billard. Le but est d'éliminer les pièces de l'adversaire.",
+            "ru": "Вместо захвата фигур путем перепрыгивания, вы используете физику, чтобы выбивать фигуры противника с доски, подобно играм вроде Angry Birds или бильярда. Цель - убрать фигуры противника.",
+            "zh-cn": "愤怒跳棋不是通过跳跃吃子，而是利用物理原理将对手的棋子撞出棋盘，类似于《愤怒的小鸟》或台球等游戏。目标是清除对手的棋子。",
+            "ja": "駒を飛び越えて取る代わりに、物理演算を使って相手の駒をボードから叩き出します。これはアングリーバードやビリヤードのようなゲームに似ています。目標は相手の駒を一掃することです。"
+         }
+      },
+      {
+         "question": {
+            "en": "How does the 'Hot Seat' mode work?",
+            "es": "¿Cómo funciona el modo 'Hot Seat'?",
+            "ar": "كيف يعمل وضع 'المقعد الساخن'؟",
+            "pt": "Como funciona o modo 'Hot Seat'?",
+            "fr": "Comment fonctionne le mode 'Hot Seat'?",
+            "ru": "Как работает режим 'Горячее место' (Hot Seat)?",
+            "zh-cn": "“热座”模式是如何运作的？",
+            "ja": "「ホットシート」モードはどのように機能しますか？"
+         },
+         "answer": {
+            "en": "Hot Seat mode allows two players to play against each other on the same device. Players take turns making their moves.",
+            "es": "El modo Hot Seat permite que dos jugadores jueguen uno contra el otro en el mismo dispositivo. Los jugadores se turnan para hacer sus movimientos.",
+            "ar": "وضع المقعد الساخن يسمح للاعبين باللعب ضد بعضهما البعض على نفس الجهاز. يتناوب اللاعبون في القيام بحركاتهم.",
+            "pt": "O modo Hot Seat permite que dois jogadores joguem um contra o outro no mesmo dispositivo. Os jogadores se revezam para fazer seus movimentos.",
+            "fr": "Le mode Hot Seat permet à deux joueurs de s'affronter sur le même appareil. Les joueurs effectuent leurs mouvements à tour de rôle.",
+            "ru": "Режим Hot Seat позволяет двум игрокам играть друг против друга на одном устройстве. Игроки ходят по очереди.",
+            "zh-cn": "热座模式允许两名玩家在同一台设备上对战。玩家轮流进行操作。",
+            "ja": "ホットシートモードでは、2人のプレイヤーが同じデバイスで対戦できます。プレイヤーは交互に自分の手を動かします。"
+         }
+      },
+      {
+         "question": {
+            "en": "Can I play Angry Checkers online against friends?",
+            "es": "¿Puedo jugar Angry Checkers en línea contra amigos?",
+            "ar": "هل يمكنني لعب الداما الغاضبة على الإنترنت ضد الأصدقاء؟",
+            "pt": "Posso jogar Angry Checkers online contra amigos?",
+            "fr": "Puis-je jouer à Angry Checkers en ligne contre des amis?",
+            "ru": "Могу ли я играть в Злые Шашки онлайн против друзей?",
+            "zh-cn": "我可以和朋友在线玩愤怒跳棋吗？",
+            "ja": "友達とオンラインでアングリーチェッカーをプレイできますか？"
+         },
+         "answer": {
+            "en": "The current Multiplayer mode matches you with random opponents online. There isn't a specific feature mentioned for inviting specific friends to a match.",
+            "es": "El modo Multijugador actual te empareja con oponentes aleatorios en línea. No se menciona una función específica para invitar a amigos concretos a una partida.",
+            "ar": "وضع متعدد اللاعبين الحالي يطابقك مع خصوم عشوائيين عبر الإنترنت. لا توجد ميزة محددة مذكورة لدعوة أصدقاء معينين للمباراة.",
+            "pt": "O modo Multijogador atual conecta você com oponentes aleatórios online. Não há um recurso específico mencionado para convidar amigos específicos para uma partida.",
+            "fr": "Le mode multijoueur actuel vous met en relation avec des adversaires aléatoires en ligne. Il n'y a pas de fonctionnalité spécifique mentionnée pour inviter des amis spécifiques à un match.",
+            "ru": "Текущий многопользовательский режим подбирает вам случайных противников онлайн. Конкретной функции для приглашения определенных друзей на матч не упоминается.",
+            "zh-cn": "当前的多人游戏模式会将您与在线随机对手匹配。没有提到邀请特定朋友进行比赛的具体功能。",
+            "ja": "現在のマルチプレイヤーモードでは、オンラインでランダムな対戦相手とマッチングされます。特定の友達を試合に招待するための具体的な機能については言及されていません。"
+         }
+      }
+   ]
+}

@@ -1,0 +1,189 @@
+---
+import { LOCALES, useTranslations, type Lang } from "@/i18n";
+import Layout from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+
+const locale = Astro.currentLocale as Lang;
+const t = useTranslations(locale);
+
+const posts = (await getCollection("blog"))
+  .filter((post) => post.id.split("/")[0] === locale)
+  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+
+const title = t({
+  ja: "ブログ",
+  en: "Blog",
+  "zh-cn": "博客",
+  ar: "مدونة",
+  es: "Blog",
+  pt: "Blog",
+  fr: "Blog",
+  ru: "Блог"
+});
+
+export const getStaticPaths = () =>
+  Object.keys(LOCALES).map((lang) => ({
+    params: { lang },
+  }));
+---
+
+<Layout {title}>
+  <div class="page-header">
+    <h1>{title}</h1>
+    <div class="header-line"></div>
+  </div>
+
+  <section class="blog-list px-4">
+    {posts.length === 0 ? (
+      <p class="no-posts">{t({ en: "No posts yet", ja: "まだ投稿はありません", "zh-cn": "暂无文章", ar: "لا توجد منشورات بعد", es: "Aún no hay publicaciones", pt: "Ainda não há posts", fr: "Pas encore de publications", ru: "Пока нет постов" })}</p>
+    ) : (
+      <div class="grid">
+        {posts.map((post) => {
+          const [, ...id] = post.id.split("/");
+          const formattedDate = new Date(post.data.date).toLocaleDateString(locale, {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+          
+          return (
+            <article class="blog-card">
+              <a href={`/${locale}/blog/${id.join("/")}/`} class="card-link">
+                {post.data.cover && (
+                  <div class="image-container">
+                    <Image 
+                      src={post.data.cover} 
+                      alt={post.data.title} 
+                      width={400}
+                      height={225}
+                      class="cover-image"
+                    />
+                  </div>
+                )}
+                <div class="content">
+                  <h2 class="title">{post.data.title}</h2>
+                  <time datetime={post.data.date.toISOString()}>{formattedDate}</time>
+                </div>
+              </a>
+            </article>
+          );
+        })}
+      </div>
+    )}
+  </section>
+
+<style>
+  .page-header {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 0 1rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary, #333);
+    margin-bottom: 0.5rem;
+  }
+  
+  .header-line {
+    height: 4px;
+    width: 80px;
+    background: linear-gradient(90deg, var(--color-primary, #4a6cf7), var(--color-secondary, #9181f2));
+    margin: 0 auto 2rem;
+    border-radius: 2px;
+  }
+  
+  .blog-list {
+    margin: 2rem 0;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .blog-card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: var(--color-card-bg, #fff);
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+  }
+  
+  .image-container {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  
+  .blog-card:hover .cover-image {
+    transform: scale(1.05);
+  }
+  
+  .content {
+    padding: 1.5rem;
+    border-top: 3px solid var(--color-primary, #4a6cf7);
+  }
+  
+  .title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    color: var(--color-primary, #333);
+  }
+  
+  time {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--color-text-light, #666);
+    margin-bottom: 1rem;
+  }
+  
+  .excerpt {
+    font-size: 0.95rem;
+    margin: 0.75rem 0 0;
+    color: var(--color-text, #444);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .no-posts {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--color-text-light, #666);
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .page-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+</Layout>

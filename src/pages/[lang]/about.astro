@@ -1,0 +1,58 @@
+---
+import Base from "@/layouts/Base.astro";
+import { useTranslations, type Lang, LOCALES } from "@/i18n";
+
+const t = useTranslations(Astro.currentLocale as Lang);
+
+export const getStaticPaths = () =>
+  Object.keys(LOCALES).map((lang) => ({
+    params: { lang },
+  }));
+
+
+---
+
+<Base>
+<div class="max-w-4xl mx-auto px-4 py-8">
+  <h1 class="text-4xl font-bold mb-8 text-[rgba(55,53,47,0.85)]">
+    {t({
+      en: "About Us",
+      es: "Sobre Nosotros",
+      ar: "معلومات عنا",
+      pt: "Sobre Nós",
+      fr: "À Propos",
+      ru: "О Нас",
+      "zh-cn": "关于我们",
+      ja: "私たちについて"
+    })}
+  </h1>
+
+  <div class="prose prose-slate max-w-none space-y-6 text-[rgba(55,53,47,0.85)]">
+    <p>
+      {t({
+        en: "Welcome to our website. We are dedicated to providing the best experience for our users.",
+        es: "Bienvenido a nuestro sitio web. Estamos dedicados a proporcionar la mejor experiencia para nuestros usuarios.",
+        ar: "مرحبا بكم في موقعنا. نحن ملتزمون بتقديم أفضل تجربة لمستخدمينا.",
+        pt: "Bem-vindo ao nosso site. Estamos dedicados a proporcionar a melhor experiência para nossos usuários.",
+        fr: "Bienvenue sur notre site. Nous nous engageons à offrir la meilleure expérience à nos utilisateurs.",
+        ru: "Добро пожаловать на наш сайт. Мы стремимся обеспечить лучший опыт для наших пользователей.",
+        "zh-cn": "欢迎访问我们的网站。我们致力于为用户提供最好的体验。",
+        ja: "ウェブサイトへようこそ。私たちはユーザーに最高の体験を提供することに専念しています。"
+      })}
+    </p>
+
+    <p>
+      {t({
+        en: "Our mission is to create innovative solutions that make a difference in people's lives.",
+        es: "Nuestra misión es crear soluciones innovadoras que marquen la diferencia en la vida de las personas.",
+        ar: "مهمتنا هي إنشاء حلول مبتكرة تحدث فرقًا في حياة الناس.",
+        pt: "Nossa missão é criar soluções inovadoras que façam a diferença na vida das pessoas.",
+        fr: "Notre mission est de créer des solutions innovantes qui font la différence dans la vie des gens.",
+        ru: "Наша миссия - создавать инновационные решения, которые меняют жизнь людей к лучшему.",
+        "zh-cn": "我们的使命是创造能够改变人们生活的创新解决方案。",
+        ja: "私たちの使命は、人々の生活に変化をもたらす革新的なソリューションを創造することです。"
+      })}
+    </p>
+  </div>
+</div>
+</Base>

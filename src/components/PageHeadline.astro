@@ -1,0 +1,14 @@
+---
+// UI used for heading title on each page.
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<header>
+  <h1>{title}</h1>
+  <slot />
+</header>
