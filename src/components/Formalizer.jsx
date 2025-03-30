@@ -219,11 +219,6 @@ const DemoSection = ({ lang = 'en' }) => { // Default lang to 'en' if not provid
         }
     };
 
-    useEffect(() => {
-        // Auto-focus input textarea on mount
-        textareaRef.current?.focus();
-    }, []);
-
     // SVG Icons
     const CopyIcon = () => (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 mr-1.5">
