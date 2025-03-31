@@ -6,20 +6,25 @@ import { LOCALES, type Lang } from "@/i18n";
 const currentLocale = Astro.currentLocale as Lang;
 ---
 
-<div id="js-languageSuggest">
-  <a id="js-link" href="#">
-    <span class="material-icons-sharp">autorenew</span>
-    <span id="js-linkText"></span>
-  </a>
+<div id="js-languageSuggest" class="hidden h-12 relative bg-gray-100 dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center h-full">
+    <a id="js-link" href="#" class="flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+      <span class="material-icons-sharp text-sm">autorenew</span>
+      <span id="js-linkText" class="text-sm font-medium"></span>
+    </a>
+  </div>
 
-  <button id="js-close">
-    <span class="material-icons-sharp">close</span>
+  <button id="js-close" class="absolute right-4 top-1/2 transform -translate-y-1/2 p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+    <span class="material-icons-sharp text-gray-500 dark:text-gray-400 text-sm">close</span>
   </button>
 </div>
 
 <script is:inline define:vars={{ currentLocale, LOCALES }}>
   const browserLang = navigator.language.toLowerCase();
   const suggest = document.getElementById("js-languageSuggest");
+
+  console.log("browserLang", browserLang);
+  console.log("currentLocale", currentLocale);
 
   const showSuggest = (lang) => {
     const pathnames = location.pathname.split("/");
@@ -29,7 +34,7 @@ const currentLocale = Astro.currentLocale as Lang;
     pathnames[1] = lang;
     link.href = pathnames.join("/");
     linkText.innerText = LOCALES[lang].label;
-    suggest.style.display = "block";
+    suggest.classList.remove("hidden");
   };
 
   if (
@@ -46,29 +51,7 @@ const currentLocale = Astro.currentLocale as Lang;
   }
 
   document.getElementById("js-close").addEventListener("click", () => {
-    suggest.style.display = "none";
+    suggest.classList.add("hidden");
     localStorage.languageSuggestDenied = true;
   });
 </script>
-
-<style>
-  #js-languageSuggest {
-    height: 44px;
-    display: none;
-    position: relative;
-    text-align: center;
-    background: var(--color-main);
-    color: var(--color-base);
-  }
-  #js-link {
-    line-height: 44px;
-  }
-  #js-close {
-    position: absolute;
-    inset: 0;
-    font-size: 24px;
-    width: 44px;
-    aspect-ratio: 1;
-    opacity: 0.5;
-  }
-</style>

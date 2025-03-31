@@ -63,16 +63,16 @@ const lang = Astro.params.lang; // Already defined in the original code
     <section class="text-center py-16 md:py-20">
       <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
         {
-          t({
+            t({
             en: "Transform Your Casual Text into Professional Prose",
             es: "Transforma Tu Texto Casual en Prosa Profesional",
             ar: "حوّل نصك العادي إلى نثر احترافي",
             pt: "Transforme Seu Texto Casual em Prosa Profissional",
             fr: "Transformez Votre Texte Informel en Prose Professionnelle",
             ru: "Преобразуйте Ваш Повседневный Текст в Профессиональную Прозу",
-            "zh-cn": "将您的随意文本转化为专业散文",
+            "zh-cn": "让日常用语焕发专业格调",
             ja: "カジュアルなテキストをプロフェッショナルな文章に変換",
-          })
+            })
         }
       </h1>
       <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
@@ -92,31 +92,14 @@ const lang = Astro.params.lang; // Already defined in the original code
       </p>
 
       <!-- The Formalizer Tool -->
-      <div id="demo" class="max-w-4xl mx-auto mb-16">
+      <div id="demo" class="max-w-4xl mx-auto">
         <Formalizer lang={lang} client:load />
       </div>
-       <a
-          href="#try-now"
-          class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg shadow-md hover:shadow-lg"
-        >
-          <Icon name="mdi:arrow-down-bold-circle-outline" class="inline-block w-5 h-5 mr-2 align-text-bottom" />
-          {
-            t({
-              en: "Learn More & Try Now",
-              es: "Más Información y Pruébalo Ahora",
-              ar: "اعرف المزيد وجرب الآن",
-              pt: "Saiba Mais e Experimente Agora",
-              fr: "En Savoir Plus et Essayez Maintenant",
-              ru: "Узнать Больше и Попробовать Сейчас",
-              "zh-cn": "了解更多并立即试用",
-              ja: "詳細を確認して今すぐ試す",
-            })
-          }
-        </a>
+
     </section>
 
     <!-- Why Choose Formalizer Section -->
-     <section class="py-12 md:py-16 bg-gray-50 dark:bg-gray-800 rounded-xl my-12">
+     <section class="py-12 md:py-16 bg-gray-50 dark:bg-gray-800 rounded-xl ">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
             {t({
                 en: "Why Choose Formalizer?",
@@ -183,16 +166,16 @@ const lang = Astro.params.lang; // Already defined in the original code
     <section class="py-12 md:py-16 bg-gray-50 dark:bg-gray-800 rounded-xl my-12">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
         {
-          t({
+            t({
             en: "Powerful Features for Perfect Prose",
             es: "Funciones Potentes para una Prosa Perfecta",
             ar: "ميزات قوية لنثر مثالي",
             pt: "Recursos Poderosos para Prosa Perfeita",
             fr: "Fonctionnalités Puissantes pour une Prose Parfaite",
             ru: "Мощные Функции для Идеальной Прозы",
-            "zh-cn": "强大功能，打造完美散文",
+            "zh-cn": "强大功能，任意语句转换为正式化内容",
             ja: "完璧な文章のための強力な機能",
-          })
+            })
         }
       </h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
@@ -391,70 +374,273 @@ const lang = Astro.params.lang; // Already defined in the original code
       </h2>
 
       <div class="max-w-3xl mx-auto space-y-6 px-4">
-        {/* FAQ 1 */}
-        <details class="border-b dark:border-gray-700 pb-4 group">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-xl font-semibold group-hover:text-blue-600">
-                {t({ en: "How does Formalizer work?", es: "¿Cómo funciona Formalizer?", ar: "كيف يعمل فورمالايزر؟", pt: "Como funciona o Formalizer?", fr: "Comment fonctionne Formalizer ?", ru: "Как работает Formalizer?", "zh-cn": "Formalizer 是如何工作的？", ja: "Formalizerはどのように機能しますか？" })}
-            </h3>
-             <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
-          </summary>
-          <p class="mt-3 text-gray-600 dark:text-gray-400">
-            {t({ en: "Formalizer uses advanced Natural Language Processing (NLP) models, a type of AI, to analyze your text. It identifies casual phrasing, slang, and improper tone, then suggests formal alternatives while carefully preserving the original meaning and context.", es: "Formalizer utiliza modelos avanzados de Procesamiento del Lenguaje Natural (PLN), un tipo de IA, para analizar tu texto. Identifica frases casuales, jerga y tono inapropiado, luego sugiere alternativas formales preservando cuidadosamente el significado y contexto originales.", ar: "يستخدم فورمالايزر نماذج معالجة اللغة الطبيعية المتقدمة (NLP)، وهي نوع من الذكاء الاصطناعي، لتحليل النص الخاص بك. يحدد العبارات العامية والعامية والنبرة غير اللائقة، ثم يقترح بدائل رسمية مع الحفاظ بعناية على المعنى والسياق الأصليين.", pt: "O Formalizer usa modelos avançados de Processamento de Linguagem Natural (PLN), um tipo de IA, para analisar seu texto. Ele identifica frases casuais, gírias e tom impróprio, e então sugere alternativas formais, preservando cuidadosamente o significado e o contexto originais.", fr: "Formalizer utilise des modèles avancés de Traitement Automatique du Langage Naturel (TALN), un type d'IA, pour analyser votre texte. Il identifie les expressions informelles, l'argot et le ton inapproprié, puis suggère des alternatives formelles tout en préservant soigneusement le sens et le contexte d'origine.", ru: "Formalizer использует передовые модели обработки естественного языка (NLP), тип ИИ, для анализа вашего текста. Он выявляет разговорные фразы, сленг и неподходящий тон, а затем предлагает формальные альтернативы, тщательно сохраняя исходный смысл и контекст.", "zh-cn": "Formalizer 使用先进的自然语言处理 (NLP) 模型（一种人工智能）来分析您的文本。它识别随意的短语、俚语和不当的语气，然后提出正式的替代方案，同时仔细保留原始含义和上下文。", ja: "Formalizerは、高度な自然言語処理（NLP）モデル（AIの一種）を使用してテキストを分析します。カジュアルな言い回し、俗語、不適切なトーンを特定し、元の意味とコンテキストを注意深く保持しながら正式な代替案を提案します。" })}
-          </p>
-        </details>
+        <div class="space-y-4"> {/* Add a container for spacing */}
 
-        {/* FAQ 2 */}
-         <details class="border-b dark:border-gray-700 pb-4 group">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-xl font-semibold group-hover:text-blue-600">
-                 {t({ en: "Is my text data secure and private?", es: "¿Son seguros y privados mis datos de texto?", ar: "هل بيانات النص الخاص بي آمنة وخاصة؟", pt: "Meus dados de texto estão seguros e privados?", fr: "Mes données textuelles sont-elles sécurisées et privées ?", ru: "Безопасны ли мои текстовые данные и конфиденциальны?", "zh-cn": "我的文本数据安全且私密吗？", ja: "私のテキストデータは安全でプライベートですか？" })}
-            </h3>
-             <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
-          </summary>
-          <p class="mt-3 text-gray-600 dark:text-gray-400">
-            {t({ en: "Yes, data privacy and security are top priorities. Your text is encrypted during transmission and processed securely. We do not store your input text or the formalized output longer than necessary to provide the service, and we never use your data for training AI models without explicit consent.", es: "Sí, la privacidad y seguridad de los datos son prioridades principales. Tu texto se cifra durante la transmisión y se procesa de forma segura. No almacenamos tu texto de entrada ni la salida formalizada más tiempo del necesario para proporcionar el servicio, y nunca usamos tus datos para entrenar modelos de IA sin consentimiento explícito.", ar: "نعم، خصوصية البيانات وأمنها هما أهم الأولويات. يتم تشفير النص الخاص بك أثناء الإرسال ومعالجته بشكل آمن. لا نقوم بتخزين نص الإدخال الخاص بك أو الإخراج الرسمي لفترة أطول من اللازم لتقديم الخدمة، ولا نستخدم بياناتك أبدًا لتدريب نماذج الذكاء الاصطناعي دون موافقة صريحة.", pt: "Sim, a privacidade e a segurança dos dados são prioridades máximas. Seu texto é criptografado durante a transmissão e processado com segurança. Não armazenamos seu texto de entrada ou a saída formalizada por mais tempo do que o necessário para fornecer o serviço e nunca usamos seus dados para treinar modelos de IA sem consentimento explícito.", fr: "Oui, la confidentialité et la sécurité des données sont des priorités absolues. Votre texte est crypté pendant la transmission et traité en toute sécurité. Nous ne stockons pas votre texte d'entrée ou la sortie formalisée plus longtemps que nécessaire pour fournir le service, et nous n'utilisons jamais vos données pour entraîner des modèles d'IA sans consentement explicite.", ru: "Да, конфиденциальность и безопасность данных являются главными приоритетами. Ваш текст шифруется во время передачи и обрабатывается безопасно. Мы не храним ваш входной текст или формализованный вывод дольше, чем необходимо для предоставления услуги, и мы никогда не используем ваши данные для обучения моделей ИИ без явного согласия.", "zh-cn": "是的，数据隐私和安全是重中之重。您的文本在传输过程中会被加密并得到安全处理。我们存储您的输入文本或正式化输出的时间不会超过提供服务所需的时间，并且未经明确同意，我们绝不会使用您的数据来训练 AI 模型。", ja: "はい、データプライバシーとセキュリティは最優先事項です。お客様のテキストは送信中に暗号化され、安全に処理されます。サービス提供に必要な期間を超えてお客様の入力テキストや形式化された出力を保存することはなく、明示的な同意なしにお客様のデータをAIモデルのトレーニングに使用することもありません。" })}
-          </p>
-        </details>
+          {/* FAQ 1 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "How does Formalizer work?", es: "¿Cómo funciona Formalizer?", ar: "كيف يعمل فورمالايزر؟", pt: "Como funciona o Formalizer?", fr: "Comment fonctionne Formalizer ?", ru: "Как работает Formalizer?", "zh-cn": "Formalizer 是如何工作的？", ja: "Formalizerはどのように機能しますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Formalizer uses advanced Natural Language Processing (NLP) models, a type of AI, to analyze your text. It identifies casual phrasing, slang, and improper tone, then suggests formal alternatives while carefully preserving the original meaning and context.", es: "Formalizer utiliza modelos avanzados de Procesamiento del Lenguaje Natural (PLN), un tipo de IA, para analizar tu texto. Identifica frases casuales, jerga y tono inapropiado, luego sugiere alternativas formales preservando cuidadosamente el significado y contexto originales.", ar: "يستخدم فورمالايزر نماذج معالجة اللغة الطبيعية المتقدمة (NLP)، وهي نوع من الذكاء الاصطناعي، لتحليل النص الخاص بك. يحدد العبارات العامية والعامية والنبرة غير اللائقة، ثم يقترح بدائل رسمية مع الحفاظ بعناية على المعنى والسياق الأصليين.", pt: "O Formalizer usa modelos avançados de Processamento de Linguagem Natural (PLN), um tipo de IA, para analisar seu texto. Ele identifica frases casuais, gírias e tom impróprio, e então sugere alternativas formais, preservando cuidadosamente o significado e o contexto originais.", fr: "Formalizer utilise des modèles avancés de Traitement Automatique du Langage Naturel (TALN), un type d'IA, pour analyser votre texte. Il identifie les expressions informelles, l'argot et le ton inapproprié, puis suggère des alternatives formelles tout en préservant soigneusement le sens et le contexte d'origine.", ru: "Formalizer использует передовые модели обработки естественного языка (NLP), тип ИИ, для анализа вашего текста. Он выявляет разговорные фразы, сленг и неподходящий тон, а затем предлагает формальные альтернативы, тщательно сохраняя исходный смысл и контекст.", "zh-cn": "Formalizer 使用先进的自然语言处理 (NLP) 模型（一种人工智能）来分析您的文本。它识别随意的短语、俚语和不当的语气，然后提出正式的替代方案，同时仔细保留原始含义和上下文。", ja: "Formalizerは、高度な自然言語処理（NLP）モデル（AIの一種）を使用してテキストを分析します。カジュアルな言い回し、俗語、不適切なトーンを特定し、元の意味とコンテキストを注意深く保持しながら正式な代替案を提案します。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 2 */}
+           <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                   {t({ en: "Is my text data secure and private?", es: "¿Son seguros y privados mis datos de texto?", ar: "هل بيانات النص الخاص بي آمنة وخاصة؟", pt: "Meus dados de texto estão seguros e privados?", fr: "Mes données textuelles sont-elles sécurisées et privées ?", ru: "Безопасны ли мои текстовые данные и конфиденциальны?", "zh-cn": "我的文本数据安全且私密吗？", ja: "私のテキストデータは安全でプライベートですか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Yes, data privacy and security are top priorities. Your text is encrypted during transmission and processed securely. We do not store your input text or the formalized output longer than necessary to provide the service, and we never use your data for training AI models without explicit consent.", es: "Sí, la privacidad y seguridad de los datos son prioridades principales. Tu texto se cifra durante la transmisión y se procesa de forma segura. No almacenamos tu texto de entrada ni la salida formalizada más tiempo del necesario para proporcionar el servicio, y nunca usamos tus datos para entrenar modelos de IA sin consentimiento explícito.", ar: "نعم، خصوصية البيانات وأمنها هما أهم الأولويات. يتم تشفير النص الخاص بك أثناء الإرسال ومعالجته بشكل آمن. لا نقوم بتخزين نص الإدخال الخاص بك أو الإخراج الرسمي لفترة أطول من اللازم لتقديم الخدمة، ولا نستخدم بياناتك أبدًا لتدريب نماذج الذكاء الاصطناعي دون موافقة صريحة.", pt: "Sim, a privacidade e a segurança dos dados são prioridades máximas. Seu texto é criptografado durante a transmissão e processado com segurança. Não armazenamos seu texto de entrada ou a saída formalizada por mais tempo do que o necessário para fornecer o serviço e nunca usamos seus dados para treinar modelos de IA sem consentimento explícito.", fr: "Oui, la confidentialité et la sécurité des données sont des priorités absolues. Votre texte est crypté pendant la transmission et traité en toute sécurité. Nous ne stockons pas votre texte d'entrée ou la sortie formalisée plus longtemps que nécessaire pour fournir le service, et nous n'utilisons jamais vos données pour entraîner des modèles d'IA sans consentement explicite.", ru: "Да, конфиденциальность и безопасность данных являются главными приоритетами. Ваш текст шифруется во время передачи и обрабатывается безопасно. Мы не храним ваш входной текст или формализованный вывод дольше, чем необходимо для предоставления услуги, и мы никогда не используем ваши данные для обучения моделей ИИ без явного согласия.", "zh-cn": "是的，数据隐私和安全是重中之重。您的文本在传输过程中会被加密并得到安全处理。我们存储您的输入文本或正式化输出的时间不会超过提供服务所需的时间，并且未经明确同意，我们绝不会使用您的数据来训练 AI 模型。", ja: "はい、データプライバシーとセキュリティは最優先事項です。お客様のテキストは送信中に暗号化され、安全に処理されます。サービス提供に必要な期間を超えてお客様の入力テキストや形式化された出力を保存することはなく、明示的な同意なしにお客様のデータをAIモデルのトレーニングに使用することもありません。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 3 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "What types of text can I formalize?", es: "¿Qué tipos de texto puedo formalizar?", ar: "ما أنواع النصوص التي يمكنني إضفاء الطابع الرسمي عليها؟", pt: "Que tipos de texto posso formalizar?", fr: "Quels types de texte puis-je formaliser ?", ru: "Какие типы текста я могу формализовать?", "zh-cn": "我可以正式化哪些类型的文本？", ja: "どのような種類のテキストを形式化できますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Formalizer is ideal for various professional and academic communications: emails, reports, memos, proposals, cover letters, essays, presentations, customer service replies, and more. It helps refine everyday messages or longer documents.", es: "Formalizer es ideal para diversas comunicaciones profesionales y académicas: correos electrónicos, informes, memorandos, propuestas, cartas de presentación, ensayos, presentaciones, respuestas de servicio al cliente y más. Ayuda a refinar mensajes cotidianos o documentos más largos.", ar: "فورمالايزر مثالي لمختلف الاتصالات المهنية والأكاديمية: رسائل البريد الإلكتروني، والتقارير، والمذكرات، والمقترحات، وخطابات التغطية، والمقالات، والعروض التقديمية، وردود خدمة العملاء، والمزيد. يساعد على صقل الرسائل اليومية أو المستندات الأطول.", pt: "O Formalizer é ideal para várias comunicações profissionais e acadêmicas: e-mails, relatórios, memorandos, propostas, cartas de apresentação, ensaios, apresentações, respostas de atendimento ao cliente e muito mais. Ajuda a refinar mensagens do dia a dia ou documentos mais longos.", fr: "Formalizer est idéal pour diverses communications professionnelles et académiques : e-mails, rapports, mémos, propositions, lettres de motivation, dissertations, présentations, réponses au service client, etc. Il aide à affiner les messages quotidiens ou les documents plus longs.", ru: "Formalizer идеально подходит для различных профессиональных и академических коммуникаций: электронных писем, отчетов, служебных записок, предложений, сопроводительных писем, эссе, презентаций, ответов службы поддержки клиентов и многого другого. Он помогает отточить повседневные сообщения или более длинные документы.", "zh-cn": "Formalizer 非常适合各种专业和学术交流：电子邮件、报告、备忘录、提案、求职信、论文、演示文稿、客户服务回复等等。它有助于润色日常消息或较长的文档。", ja: "Formalizerは、メール、レポート、メモ、提案書、カバーレター、エッセイ、プレゼンテーション、カスタマーサービスへの返信など、さまざまな専門的および学術的なコミュニケーションに最適です。日常的なメッセージや長いドキュメントを洗練させるのに役立ちます。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 4 (Previously 5) */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "Does it just translate? How is it different from translation tools?", es: "¿Solo traduce? ¿En qué se diferencia de las herramientas de traducción?", ar: "هل يترجم فقط؟ كيف يختلف عن أدوات الترجمة؟", pt: "Ele apenas traduz? Como ele difere das ferramentas de tradução?", fr: "Est-ce que ça traduit juste ? En quoi est-ce différent des outils de traduction ?", ru: "Он просто переводит? Чем он отличается от инструментов перевода?", "zh-cn": "它只是翻译吗？它与翻译工具有何不同？", ja: "単に翻訳するだけですか？翻訳ツールとはどう違いますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "No, Formalizer focuses on adjusting the *formality and tone* within the *same language*. While it supports multiple languages, its core function is not translation (changing from one language to another) but rather refinement (making text more professional within its original language). Translation tools change language; Formalizer improves style.", es: "No, Formalizer se enfoca en ajustar la *formalidad y el tono* dentro del *mismo idioma*. Si bien admite múltiples idiomas, su función principal no es la traducción (cambiar de un idioma a otro) sino el refinamiento (hacer que el texto sea más profesional dentro de su idioma original). Las herramientas de traducción cambian el idioma; Formalizer mejora el estilo.", ar: "لا، يركز فورمالايزر على تعديل *الرسمية والنبرة* ضمن *نفس اللغة*. بينما يدعم لغات متعددة، فإن وظيفته الأساسية ليست الترجمة (التغيير من لغة إلى أخرى) بل الصقل (جعل النص أكثر احترافية بلغته الأصلية). أدوات الترجمة تغير اللغة؛ فورمالايزر يحسن الأسلوب.", pt: "Não, o Formalizer foca em ajustar a *formalidade e o tom* dentro do *mesmo idioma*. Embora suporte múltiplos idiomas, sua função principal não é a tradução (mudar de um idioma para outro), mas sim o refinamento (tornar o texto mais profissional em seu idioma original). Ferramentas de tradução mudam o idioma; o Formalizer melhora o estilo.", fr: "Non, Formalizer se concentre sur l'ajustement de la *formalité et du ton* au sein de la *même langue*. Bien qu'il prenne en charge plusieurs langues, sa fonction principale n'est pas la traduction (passer d'une langue à une autre) mais plutôt le raffinement (rendre le texte plus professionnel dans sa langue d'origine). Les outils de traduction changent la langue ; Formalizer améliore le style.", ru: "Нет, Formalizer фокусируется на настройке *формальности и тона* в пределах *одного языка*. Хотя он поддерживает несколько языков, его основная функция - не перевод (изменение с одного языка на другой), а скорее улучшение (придание тексту большей профессиональности на его исходном языке). Инструменты перевода меняют язык; Formalizer улучшает стиль.", "zh-cn": "不，Formalizer 专注于在*同一语言*内调整*正式性和语气*。虽然它支持多种语言，但其核心功能不是翻译（从一种语言更改为另一种语言），而是润色（使文本在其原始语言内更专业）。翻译工具改变语言；Formalizer 改进风格。", ja: "いいえ、Formalizerは*同じ言語*内で*形式性とトーン*を調整することに焦点を当てています。複数の言語をサポートしていますが、そのコア機能は翻訳（ある言語から別の言語への変更）ではなく、洗練（元の言語内でテキストをよりプロフェッショナルにすること）です。翻訳ツールは言語を変更します。Formalizerはスタイルを改善します。" })}
+            </p>
+          </details>
+      
+          {/* --- NEW FAQs START HERE --- */}
+      
+          {/* FAQ 5 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "Is Formalizer really free to use?", es: "¿Es Formalizer realmente gratuito?", ar: "هل فورمالايزر مجاني للاستخدام حقًا؟", pt: "O Formalizer é realmente gratuito?", fr: "Formalizer est-il vraiment gratuit ?", ru: "Formalizer действительно бесплатен?", "zh-cn": "Formalizer 真的可以免费使用吗？", ja: "Formalizerは本当に無料で使用できますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Yes, Formalizer is a **permanently free** tool. Our goal is to make professional communication accessible to everyone, without hidden fees or subscription requirements for its core formalization features.", es: "Sí, Formalizer es una herramienta **permanentemente gratuita**. Nuestro objetivo es hacer que la comunicación profesional sea accesible para todos, sin tarifas ocultas ni requisitos de suscripción para sus funciones principales de formalización.", ar: "نعم، فورمالايزر أداة **مجانية بشكل دائم**. هدفنا هو جعل الاتصالات المهنية في متناول الجميع، دون رسوم خفية أو متطلبات اشتراك لميزاته الأساسية لإضفاء الطابع الرسمي.", pt: "Sim, o Formalizer é uma ferramenta **permanentemente gratuita**. Nosso objetivo é tornar a comunicação profissional acessível a todos, sem taxas ocultas ou requisitos de assinatura para seus recursos principais de formalização.", fr: "Oui, Formalizer est un outil **définitivement gratuit**. Notre objectif est de rendre la communication professionnelle accessible à tous, sans frais cachés ni obligation d'abonnement pour ses fonctionnalités de formalisation de base.", ru: "Да, Formalizer — это **постоянно бесплатный** инструмент. Наша цель — сделать профессиональное общение доступным для всех, без скрытых платежей или подписок для его основных функций формализации.", "zh-cn": "是的，Formalizer 是一个**永久免费**的工具。我们的目标是让每个人都能进行专业的交流，其核心的正式化功能没有任何隐藏费用或订阅要求。", ja: "はい、Formalizerは**永久に無料**のツールです。私たちの目標は、隠れた料金やコアな形式化機能のサブスクリプション要件なしに、誰もがプロフェッショナルなコミュニケーションを利用できるようにすることです。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 6 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "What languages does Formalizer support?", es: "¿Qué idiomas admite Formalizer?", ar: "ما اللغات التي يدعمها فورمالايزر؟", pt: "Quais idiomas o Formalizer suporta?", fr: "Quelles langues Formalizer prend-il en charge ?", ru: "Какие языки поддерживает Formalizer?", "zh-cn": "Formalizer 支持哪些语言？", ja: "Formalizerはどの言語をサポートしていますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Formalizer currently supports text formalization in [List the supported languages, e.g., English, Spanish, French, German, Portuguese, Russian, Chinese, Japanese, Arabic]. We are continuously working to add support for more languages.", es: "Formalizer actualmente admite la formalización de texto en [Enumere los idiomas admitidos, p. ej., inglés, español, francés, alemán, portugués, ruso, chino, japonés, árabe]. Trabajamos continuamente para agregar soporte para más idiomas.", ar: "يدعم فورمالايزر حاليًا إضفاء الطابع الرسمي على النصوص في [اذكر اللغات المدعومة، على سبيل المثال، الإنجليزية، الإسبانية، الفرنسية، الألمانية، البرتغالية، الروسية، الصينية، اليابانية، العربية]. نحن نعمل باستمرار لإضافة دعم لمزيد من اللغات.", pt: "O Formalizer atualmente suporta a formalização de texto em [Liste os idiomas suportados, por exemplo, inglês, espanhol, francês, alemão, português, russo, chinês, japonês, árabe]. Estamos continuamente trabalhando para adicionar suporte a mais idiomas.", fr: "Formalizer prend actuellement en charge la formalisation de texte en [Listez les langues prises en charge, par exemple, anglais, espagnol, français, allemand, portugais, russe, chinois, japonais, arabe]. Nous travaillons continuellement pour ajouter la prise en charge d'autres langues.", ru: "В настоящее время Formalizer поддерживает формализацию текста на [Перечислите поддерживаемые языки, например, английский, испанский, французский, немецкий, португальский, русский, китайский, японский, арабский]. Мы постоянно работаем над добавлением поддержки большего количества языков.", "zh-cn": "Formalizer 目前支持 [列出支持的语言，例如英语、西班牙语、法语、德语、葡萄牙语、俄语、中文、日语、阿拉伯语] 的文本正式化。我们正在不断努力增加对更多语言的支持。", ja: "Formalizerは現在、[サポートされている言語をリストしてください。例：英語、スペイン語、フランス語、ドイツ語、ポルトガル語、ロシア語、中国語、日本語、アラビア語]でのテキスト形式化をサポートしています。より多くの言語をサポートできるよう継続的に取り組んでいます。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 7 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "Is there a limit on the text length I can input?", es: "¿Hay un límite en la longitud del texto que puedo ingresar?", ar: "هل هناك حد لطول النص الذي يمكنني إدخاله؟", pt: "Existe um limite para o comprimento do texto que posso inserir?", fr: "Y a-t-il une limite à la longueur du texte que je peux saisir ?", ru: "Есть ли ограничение на длину вводимого текста?", "zh-cn": "我可以输入的文本长度有限制吗？", ja: "入力できるテキストの長さに制限はありますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Currently, Formalizer accepts text inputs up to [Specify limit, e.g., 5000 characters or 1000 words] per request. This allows for efficient processing while covering most common use cases like emails and document sections. For very long documents, you may need to process them in parts.", es: "Actualmente, Formalizer acepta entradas de texto de hasta [Especificar límite, p. ej., 5000 caracteres o 1000 palabras] por solicitud. Esto permite un procesamiento eficiente cubriendo la mayoría de los casos de uso comunes como correos electrónicos y secciones de documentos. Para documentos muy largos, es posible que necesite procesarlos por partes.", ar: "حاليًا، يقبل فورمالايزر إدخالات نصية تصل إلى [حدد الحد، على سبيل المثال، 5000 حرف أو 1000 كلمة] لكل طلب. وهذا يسمح بالمعالجة الفعالة مع تغطية معظم حالات الاستخدام الشائعة مثل رسائل البريد الإلكتروني وأقسام المستندات. بالنسبة للمستندات الطويلة جدًا، قد تحتاج إلى معالجتها على أجزاء.", pt: "Atualmente, o Formalizer aceita entradas de texto de até [Especifique o limite, por exemplo, 5000 caracteres ou 1000 palavras] por solicitação. Isso permite um processamento eficiente, cobrindo a maioria dos casos de uso comuns, como e-mails e seções de documentos. Para documentos muito longos, pode ser necessário processá-los em partes.", fr: "Actuellement, Formalizer accepte les entrées de texte jusqu'à [Spécifier la limite, par exemple, 5000 caractères ou 1000 mots] par requête. Cela permet un traitement efficace tout en couvrant la plupart des cas d'utilisation courants tels que les e-mails et les sections de documents. Pour les documents très longs, vous devrez peut-être les traiter par parties.", ru: "В настоящее время Formalizer принимает текстовые вводы до [Укажите лимит, например, 5000 символов или 1000 слов] за один запрос. Это обеспечивает эффективную обработку и охватывает большинство распространенных случаев использования, таких как электронные письма и разделы документов. Для очень длинных документов может потребоваться их обработка по частям.", "zh-cn": "目前，Formalizer 每次请求接受最多 [指定限制，例如 5000 个字符或 1000 个单词] 的文本输入。这可以实现高效处理，同时涵盖电子邮件和文档章节等大多数常见用例。对于非常长的文档，您可能需要分部分处理。", ja: "現在、Formalizerはリクエストごとに最大[制限を指定してください。例：5000文字または1000語]のテキスト入力を受け付けます。これにより、メールやドキュメントのセクションなどの最も一般的なユースケースをカバーしながら効率的な処理が可能です。非常に長いドキュメントの場合は、部分的に処理する必要がある場合があります。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 8 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "Do I need to create an account to use Formalizer?", es: "¿Necesito crear una cuenta para usar Formalizer?", ar: "هل أحتاج إلى إنشاء حساب لاستخدام فورمالايزر؟", pt: "Preciso criar uma conta para usar o Formalizer?", fr: "Dois-je créer un compte pour utiliser Formalizer ?", ru: "Нужно ли мне создавать учетную запись для использования Formalizer?", "zh-cn": "我需要创建帐户才能使用 Formalizer 吗？", ja: "Formalizerを使用するためにアカウントを作成する必要がありますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "No, you can start using Formalizer right away without creating an account. As a free tool, we aim for maximum accessibility and ease of use. Simply paste your text and get the formalized version instantly.", es: "No, puedes comenzar a usar Formalizer de inmediato sin crear una cuenta. Como herramienta gratuita, buscamos la máxima accesibilidad y facilidad de uso. Simplemente pega tu texto y obtén la versión formalizada al instante.", ar: "لا، يمكنك البدء في استخدام فورمالايزر على الفور دون إنشاء حساب. كأداة مجانية، نهدف إلى أقصى قدر من إمكانية الوصول وسهولة الاستخدام. ما عليك سوى لصق النص الخاص بك والحصول على النسخة الرسمية على الفور.", pt: "Não, você pode começar a usar o Formalizer imediatamente, sem criar uma conta. Como uma ferramenta gratuita, nosso objetivo é a máxima acessibilidade e facilidade de uso. Basta colar seu texto e obter a versão formalizada instantaneamente.", fr: "Non, vous pouvez commencer à utiliser Formalizer immédiatement sans créer de compte. En tant qu'outil gratuit, nous visons une accessibilité et une facilité d'utilisation maximales. Collez simplement votre texte et obtenez la version formalisée instantanément.", ru: "Нет, вы можете начать использовать Formalizer сразу же, без создания учетной записи. Как бесплатный инструмент, мы стремимся к максимальной доступности и простоте использования. Просто вставьте свой текст и мгновенно получите формализованную версию.", "zh-cn": "不，您无需创建帐户即可立即开始使用 Formalizer。作为一个免费工具，我们的目标是提供最大的可访问性和易用性。只需粘贴您的文本即可立即获得正式化版本。", ja: "いいえ、アカウントを作成せずにすぐにFormalizerの使用を開始できます。無料ツールとして、最大限のアクセシビリティと使いやすさを目指しています。テキストを貼り付けるだけで、すぐに形式化されたバージョンを取得できます。" })}
+            </p>
+          </details>
+      
+           {/* FAQ 9 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "How accurate are the suggestions?", es: "¿Qué tan precisas son las sugerencias?", ar: "ما مدى دقة الاقتراحات؟", pt: "Qual a precisão das sugestões?", fr: "Quelle est la précision des suggestions ?", ru: "Насколько точны предложения?", "zh-cn": "建议的准确性如何？", ja: "提案の精度はどのくらいですか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Formalizer uses state-of-the-art AI models trained on vast amounts of text data, resulting in highly accurate suggestions for most common scenarios. However, AI is not infallible. Context can be subtle, and occasionally a suggestion might slightly alter nuance. We always recommend reviewing the output.", es: "Formalizer utiliza modelos de IA de última generación entrenados en grandes cantidades de datos de texto, lo que resulta en sugerencias muy precisas para la mayoría de los escenarios comunes. Sin embargo, la IA no es infalible. El contexto puede ser sutil y, ocasionalmente, una sugerencia podría alterar ligeramente el matiz. Siempre recomendamos revisar el resultado.", ar: "يستخدم فورمالايزر نماذج ذكاء اصطناعي حديثة مدربة على كميات هائلة من البيانات النصية، مما ينتج عنه اقتراحات دقيقة للغاية لمعظم السيناريوهات الشائعة. ومع ذلك، فإن الذكاء الاصطناعي ليس معصومًا من الخطأ. يمكن أن يكون السياق دقيقًا، وفي بعض الأحيان قد يغير الاقتراح الفارق الدقيق بشكل طفيف. نوصي دائمًا بمراجعة الإخراج.", pt: "O Formalizer usa modelos de IA de última geração treinados em vastas quantidades de dados de texto, resultando em sugestões altamente precisas para a maioria dos cenários comuns. No entanto, a IA não é infalível. O contexto pode ser sutil e, ocasionalmente, uma sugestão pode alterar ligeiramente a nuance. Sempre recomendamos revisar a saída.", fr: "Formalizer utilise des modèles d'IA de pointe entraînés sur de grandes quantités de données textuelles, ce qui permet d'obtenir des suggestions très précises pour la plupart des scénarios courants. Cependant, l'IA n'est pas infaillible. Le contexte peut être subtil et, occasionnellement, une suggestion peut légèrement modifier la nuance. Nous recommandons toujours de vérifier le résultat.", ru: "Formalizer использует самые современные модели ИИ, обученные на огромных объемах текстовых данных, что обеспечивает высокую точность предложений для большинства распространенных сценариев. Однако ИИ не безошибочен. Контекст может быть тонким, и иногда предложение может немного изменить нюанс. Мы всегда рекомендуем просматривать результат.", "zh-cn": "Formalizer 使用经过大量文本数据训练的最先进的 AI 模型，可在大多数常见场景下提供高度准确的建议。然而，人工智能并非万无一失。语境可能很微妙，有时建议可能会略微改变细微差别。我们始终建议您审阅输出。", ja: "Formalizerは、膨大な量のテキストデータでトレーニングされた最先端のAIモデルを使用しており、ほとんどの一般的なシナリオで非常に正確な提案を行います。ただし、AIは完全ではありません。コンテキストは微妙であり、提案がニュアンスをわずかに変えることもあります。常に出力を確認することをお勧めします。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 10 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "Does Formalizer also check grammar and spelling?", es: "¿Formalizer también revisa la gramática y la ortografía?", ar: "هل يقوم فورمالايزر أيضًا بالتحقق من القواعد النحوية والإملائية؟", pt: "O Formalizer também verifica gramática e ortografia?", fr: "Formalizer vérifie-t-il également la grammaire et l'orthographe ?", ru: "Проверяет ли Formalizer также грамматику и орфографию?", "zh-cn": "Formalizer 是否也检查语法和拼写？", ja: "Formalizerは文法やスペルもチェックしますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Formalizer's primary focus is on tone and formality refinement. While the process often corrects minor grammatical awkwardness related to informal phrasing, it is *not* a dedicated grammar or spell checker. We recommend using Formalizer in conjunction with a standard grammar/spell check tool for best results.", es: "El enfoque principal de Formalizer es el refinamiento del tono y la formalidad. Si bien el proceso a menudo corrige pequeñas torpezas gramaticales relacionadas con frases informales, *no* es un corrector de gramática u ortografía dedicado. Recomendamos usar Formalizer junto con una herramienta estándar de revisión de gramática/ortografía para obtener los mejores resultados.", ar: "ينصب تركيز فورمالايزر الأساسي على صقل النبرة والطابع الرسمي. بينما غالبًا ما تصحح العملية الأخطاء النحوية الطفيفة المتعلقة بالصياغة غير الرسمية، فهي *ليست* مدققًا نحويًا أو إملائيًا مخصصًا. نوصي باستخدام فورمالايزر بالاقتران مع أداة تدقيق نحوي/إملائي قياسية للحصول على أفضل النتائج.", pt: "O foco principal do Formalizer é o refinamento do tom e da formalidade. Embora o processo muitas vezes corrija pequenas inadequações gramaticais relacionadas a frases informais, ele *não* é um verificador dedicado de gramática ou ortografia. Recomendamos usar o Formalizer em conjunto com uma ferramenta padrão de verificação de gramática/ortografia para obter os melhores resultados.", fr: "L'objectif principal de Formalizer est d'affiner le ton et la formalité. Bien que le processus corrige souvent des maladresses grammaticales mineures liées à des tournures informelles, il ne s'agit *pas* d'un correcteur grammatical ou orthographique dédié. Nous recommandons d'utiliser Formalizer en conjonction avec un outil de vérification grammaticale/orthographique standard pour de meilleurs résultats.", ru: "Основное внимание Formalizer уделяет уточнению тона и формальности. Хотя этот процесс часто исправляет незначительные грамматические неловкости, связанные с неформальными формулировками, он *не является* специальным средством проверки грамматики или орфографии. Мы рекомендуем использовать Formalizer в сочетании со стандартным инструментом проверки грамматики/орфографии для достижения наилучших результатов.", "zh-cn": "Formalizer 的主要重点是语气和正式性的改进。虽然该过程通常会纠正与非正式措辞相关的轻微语法问题，但它*不是*专门的语法或拼写检查器。我们建议将 Formalizer 与标准的语法/拼写检查工具结合使用以获得最佳效果。", ja: "Formalizerの主な焦点は、トーンと形式性の洗練です。このプロセスでは、非公式な表現に関連する軽微な文法的な不自然さが修正されることがよくありますが、専用の文法チェッカーやスペルチェッカーでは*ありません*。最良の結果を得るには、Formalizerを標準の文法/スペルチェックツールと併用することをお勧めします。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 11 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "How well does Formalizer understand context?", es: "¿Qué tan bien entiende Formalizer el contexto?", ar: "ما مدى فهم فورمالايزر للسياق؟", pt: "Quão bem o Formalizer entende o contexto?", fr: "Dans quelle mesure Formalizer comprend-il le contexte ?", ru: "Насколько хорошо Formalizer понимает контекст?", "zh-cn": "Formalizer 对上下文的理解程度如何？", ja: "Formalizerはコンテキストをどの程度理解しますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Our AI models are designed to analyze the surrounding text to grasp context, which helps in choosing the most appropriate formal alternative. It understands nuances better than simpler replacement tools. However, very complex or ambiguous contexts might still pose a challenge. Providing clear, well-structured input helps improve contextual understanding.", es: "Nuestros modelos de IA están diseñados para analizar el texto circundante para captar el contexto, lo que ayuda a elegir la alternativa formal más apropiada. Entiende los matices mejor que las herramientas de reemplazo más simples. Sin embargo, los contextos muy complejos o ambiguos aún pueden plantear un desafío. Proporcionar una entrada clara y bien estructurada ayuda a mejorar la comprensión contextual.", ar: "تم تصميم نماذج الذكاء الاصطناعي الخاصة بنا لتحليل النص المحيط لفهم السياق، مما يساعد في اختيار البديل الرسمي الأنسب. إنها تفهم الفروق الدقيقة بشكل أفضل من أدوات الاستبدال الأبسط. ومع ذلك، فإن السياقات المعقدة جدًا أو الغامضة قد لا تزال تشكل تحديًا. يساعد توفير مدخلات واضحة ومنظمة جيدًا على تحسين الفهم السياقي.", pt: "Nossos modelos de IA são projetados para analisar o texto ao redor para entender o contexto, o que ajuda a escolher a alternativa formal mais apropriada. Ele entende nuances melhor do que ferramentas de substituição mais simples. No entanto, contextos muito complexos ou ambíguos ainda podem representar um desafio. Fornecer uma entrada clara e bem estruturada ajuda a melhorar a compreensão contextual.", fr: "Nos modèles d'IA sont conçus pour analyser le texte environnant afin de saisir le contexte, ce qui aide à choisir l'alternative formelle la plus appropriée. Il comprend les nuances mieux que les outils de remplacement plus simples. Cependant, des contextes très complexes ou ambigus peuvent encore poser problème. Fournir une entrée claire et bien structurée contribue à améliorer la compréhension contextuelle.", ru: "Наши модели ИИ предназначены для анализа окружающего текста для понимания контекста, что помогает выбрать наиболее подходящую формальную альтернативу. Он понимает нюансы лучше, чем простые инструменты замены. Однако очень сложные или неоднозначные контексты все еще могут представлять собой проблему. Предоставление четкого, хорошо структурированного ввода помогает улучшить понимание контекста.", "zh-cn": "我们的 AI 模型旨在通过分析周围文本来掌握上下文，这有助于选择最合适的正式替代方案。它比简单的替换工具更能理解细微差别。然而，非常复杂或模棱两可的上下文可能仍然构成挑战。提供清晰、结构良好的输入有助于提高上下文理解能力。", ja: "当社のAIモデルは、周囲のテキストを分析してコンテキストを把握するように設計されており、これにより最も適切な形式的な代替案を選択するのに役立ちます。単純な置換ツールよりもニュアンスをよく理解します。ただし、非常に複雑または曖昧なコンテキストは依然として課題となる可能性があります。明確で構造化された入力を提供することは、コンテキスト理解の向上に役立ちます。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 12 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "Will Formalizer change the core meaning of my text?", es: "¿Cambiará Formalizer el significado central de mi texto?", ar: "هل سيغير فورمالايزر المعنى الأساسي لنصي؟", pt: "O Formalizer mudará o significado central do meu texto?", fr: "Formalizer changera-t-il le sens fondamental de mon texte ?", ru: "Изменит ли Formalizer основной смысл моего текста?", "zh-cn": "Formalizer 会改变我文本的核心含义吗？", ja: "Formalizerは私のテキストの核心的な意味を変えますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Preserving the original meaning is a key principle of Formalizer. The AI aims to replace informal expressions with their formal equivalents *without* altering the intended message or factual content. While style and tone change, the core substance should remain the same. Always double-check, especially for critical communications.", es: "Preservar el significado original es un principio clave de Formalizer. La IA tiene como objetivo reemplazar las expresiones informales con sus equivalentes formales *sin* alterar el mensaje previsto o el contenido fáctico. Si bien el estilo y el tono cambian, la sustancia central debe permanecer igual. Siempre verifique dos veces, especialmente para comunicaciones críticas.", ar: "يعد الحفاظ على المعنى الأصلي مبدأ أساسيًا لفورمالايزر. يهدف الذكاء الاصطناعي إلى استبدال التعبيرات غير الرسمية بمكافئاتها الرسمية *دون* تغيير الرسالة المقصودة أو المحتوى الواقعي. بينما يتغير الأسلوب والنبرة، يجب أن يظل الجوهر الأساسي كما هو. تحقق دائمًا مرة أخرى، خاصة بالنسبة للاتصالات الهامة.", pt: "Preservar o significado original é um princípio fundamental do Formalizer. A IA visa substituir expressões informais por seus equivalentes formais *sem* alterar a mensagem pretendida ou o conteúdo factual. Embora o estilo e o tom mudem, a substância principal deve permanecer a mesma. Sempre verifique novamente, especialmente para comunicações críticas.", fr: "Préserver le sens original est un principe clé de Formalizer. L'IA vise à remplacer les expressions informelles par leurs équivalents formels *sans* altérer le message prévu ou le contenu factuel. Bien que le style et le ton changent, la substance fondamentale doit rester la même. Vérifiez toujours attentivement, en particulier pour les communications critiques.", ru: "Сохранение исходного значения является ключевым принципом Formalizer. ИИ стремится заменить неформальные выражения их формальными эквивалентами, *не* изменяя предполагаемое сообщение или фактическое содержание. Хотя стиль и тон меняются, основная суть должна оставаться прежней. Всегда перепроверяйте, особенно для критически важных сообщений.", "zh-cn": "保留原始含义是 Formalizer 的一项关键原则。人工智能旨在用正式的等效表达替换非正式的表达，而*不*改变预期的信息或事实内容。虽然风格和语气会改变，但核心实质应保持不变。请务必仔细检查，尤其是对于关键通信。", ja: "元の意味を保持することは、Formalizerの重要な原則です。AIは、意図されたメッセージや事実内容を変更することなく、非公式な表現をその形式的な同等物に置き換えることを目指しています。スタイルやトーンは変わりますが、核心的な内容は同じであるべきです。特に重要なコミュニケーションについては、常に再確認してください。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 13 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "Should I still proofread after using Formalizer?", es: "¿Debo seguir corrigiendo después de usar Formalizer?", ar: "هل يجب عليّ المراجعة بعد استخدام فورمالايزر؟", pt: "Ainda devo revisar depois de usar o Formalizer?", fr: "Dois-je encore relire après avoir utilisé Formalizer ?", ru: "Нужно ли мне все еще вычитывать текст после использования Formalizer?", "zh-cn": "使用 Formalizer 后我还需要校对吗？", ja: "Formalizerを使用した後は校正する必要がありますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Absolutely. While Formalizer is a powerful tool, AI suggestions should be seen as assistance, not a final replacement for human judgment. Proofreading ensures the text perfectly matches your intended meaning, tone, and context, and catches any subtle errors or awkward phrasing the AI might have missed or introduced.", es: "Absolutamente. Si bien Formalizer es una herramienta poderosa, las sugerencias de IA deben verse como una ayuda, no como un reemplazo final del juicio humano. La corrección garantiza que el texto coincida perfectamente con el significado, el tono y el contexto previstos, y detecta cualquier error sutil o frase incómoda que la IA podría haber pasado por alto o introducido.", ar: "بالتأكيد. بينما يعد فورمالايزر أداة قوية، يجب النظر إلى اقتراحات الذكاء الاصطناعي على أنها مساعدة، وليست بديلاً نهائيًا للحكم البشري. تضمن المراجعة أن النص يطابق تمامًا المعنى والنبرة والسياق المقصودين، وتكتشف أي أخطاء دقيقة أو صياغة محرجة قد تكون فاتت الذكاء الاصطناعي أو أدخلتها.", pt: "Com certeza. Embora o Formalizer seja uma ferramenta poderosa, as sugestões de IA devem ser vistas como assistência, não como um substituto final para o julgamento humano. A revisão garante que o texto corresponda perfeitamente ao significado, tom e contexto pretendidos, e captura quaisquer erros sutis ou frases estranhas que a IA possa ter perdido ou introduzido.", fr: "Absolument. Bien que Formalizer soit un outil puissant, les suggestions de l'IA doivent être considérées comme une aide, et non comme un remplacement définitif du jugement humain. La relecture garantit que le texte correspond parfaitement à votre signification, votre ton et votre contexte voulus, et permet de repérer les erreurs subtiles ou les formulations maladroites que l'IA aurait pu manquer ou introduire.", ru: "Абсолютно. Хотя Formalizer — мощный инструмент, предложения ИИ следует рассматривать как помощь, а не окончательную замену человеческому суждению. Вычитка гарантирует, что текст идеально соответствует вашему предполагаемому значению, тону и контексту, а также выявляет любые тонкие ошибки или неуклюжие формулировки, которые ИИ мог пропустить или внести.", "zh-cn": "当然需要。虽然 Formalizer 是一个强大的工具，但 AI 的建议应被视为辅助，而不是对人类判断的最终替代。校对可确保文本完全符合您的预期含义、语气和上下文，并发现 AI 可能遗漏或引入的任何细微错误或不自然的措辞。", ja: "もちろんです。Formalizerは強力なツールですが、AIの提案は支援として見るべきであり、人間の判断の最終的な代替ではありません。校正により、テキストが意図した意味、トーン、コンテキストと完全に一致していることを確認し、AIが見逃したり導入したりした可能性のある微妙なエラーや不自然な表現を捉えることができます。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 14 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "Can Formalizer help me improve my writing skills?", es: "¿Puede Formalizer ayudarme a mejorar mis habilidades de escritura?", ar: "هل يمكن أن يساعدني فورمالايزر في تحسين مهاراتي في الكتابة؟", pt: "O Formalizer pode me ajudar a melhorar minhas habilidades de escrita?", fr: "Formalizer peut-il m'aider à améliorer mes compétences rédactionnelles ?", ru: "Может ли Formalizer помочь мне улучшить навыки письма?", "zh-cn": "Formalizer 能帮助我提高写作技巧吗？", ja: "Formalizerは私のライティングスキル向上に役立ちますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Yes, by observing the changes Formalizer suggests, you can learn common patterns of informal language and their formal equivalents. Regularly using the tool and reviewing its suggestions can help you internalize more professional writing habits over time.", es: "Sí, al observar los cambios que sugiere Formalizer, puedes aprender patrones comunes de lenguaje informal y sus equivalentes formales. Usar regularmente la herramienta y revisar sus sugerencias puede ayudarte a internalizar hábitos de escritura más profesionales con el tiempo.", ar: "نعم، من خلال ملاحظة التغييرات التي يقترحها فورمالايزر، يمكنك تعلم الأنماط الشائعة للغة غير الرسمية ومكافئاتها الرسمية. يمكن أن يساعدك استخدام الأداة بانتظام ومراجعة اقتراحاتها على استيعاب عادات الكتابة الأكثر احترافية بمرور الوقت.", pt: "Sim, observando as mudanças que o Formalizer sugere, você pode aprender padrões comuns de linguagem informal e seus equivalentes formais. Usar a ferramenta regularmente e revisar suas sugestões pode ajudá-lo a internalizar hábitos de escrita mais profissionais ao longo do tempo.", fr: "Oui, en observant les changements suggérés par Formalizer, vous pouvez apprendre les schémas courants du langage informel et leurs équivalents formels. Utiliser régulièrement l'outil et examiner ses suggestions peut vous aider à intérioriser des habitudes d'écriture plus professionnelles au fil du temps.", ru: "Да, наблюдая за изменениями, предлагаемыми Formalizer, вы можете изучить распространенные шаблоны неформального языка и их формальные эквиваленты. Регулярное использование инструмента и просмотр его предложений помогут вам со временем усвоить более профессиональные навыки письма.", "zh-cn": "是的，通过观察 Formalizer 建议的更改，您可以了解非正式语言的常见模式及其正式的等效表达。定期使用该工具并查看其建议可以帮助您随着时间的推移内化更专业的写作习惯。", ja: "はい、Formalizerが提案する変更を観察することで、非公式な言語の一般的なパターンとその形式的な同等物を学ぶことができます。ツールを定期的に使用し、その提案を確認することで、時間の経過とともによりプロフェッショナルなライティング習慣を身につけるのに役立ちます。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 15 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "How fast is the formalization process?", es: "¿Qué tan rápido es el proceso de formalización?", ar: "ما مدى سرعة عملية إضفاء الطابع الرسمي؟", pt: "Quão rápido é o processo de formalização?", fr: "Quelle est la vitesse du processus de formalisation ?", ru: "Насколько быстр процесс формализации?", "zh-cn": "正式化过程有多快？", ja: "形式化プロセスはどのくらい速いですか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Formalizer is designed for speed. For typical text lengths like emails or paragraphs, the formalized output usually appears within a few seconds. Processing time may slightly increase for longer texts nearing the input limit, but it generally remains very fast.", es: "Formalizer está diseñado para la velocidad. Para longitudes de texto típicas como correos electrónicos o párrafos, el resultado formalizado generalmente aparece en unos pocos segundos. El tiempo de procesamiento puede aumentar ligeramente para textos más largos que se acercan al límite de entrada, pero generalmente sigue siendo muy rápido.", ar: "تم تصميم فورمالايزر للسرعة. بالنسبة لأطوال النصوص النموذجية مثل رسائل البريد الإلكتروني أو الفقرات، يظهر الإخراج الرسمي عادةً في غضون ثوانٍ قليلة. قد يزيد وقت المعالجة قليلاً للنصوص الأطول التي تقترب من حد الإدخال، ولكنه يظل سريعًا جدًا بشكل عام.", pt: "O Formalizer foi projetado para velocidade. Para comprimentos de texto típicos como e-mails ou parágrafos, a saída formalizada geralmente aparece em poucos segundos. O tempo de processamento pode aumentar ligeiramente para textos mais longos próximos ao limite de entrada, mas geralmente permanece muito rápido.", fr: "Formalizer est conçu pour la vitesse. Pour des longueurs de texte typiques comme les e-mails ou les paragraphes, le résultat formalisé apparaît généralement en quelques secondes. Le temps de traitement peut augmenter légèrement pour les textes plus longs approchant la limite d'entrée, mais il reste généralement très rapide.", ru: "Formalizer разработан для скорости. Для типичных длин текста, таких как электронные письма или абзацы, формализованный вывод обычно появляется в течение нескольких секунд. Время обработки может немного увеличиться для более длинных текстов, приближающихся к пределу ввода, но в целом оно остается очень быстрым.", "zh-cn": "Formalizer 追求速度。对于电子邮件或段落等典型文本长度，正式化输出通常会在几秒钟内出现。对于接近输入限制的较长文本，处理时间可能会略有增加，但通常仍然非常快。", ja: "Formalizerは速度を重視して設計されています。メールや段落などの典型的なテキスト長の場合、形式化された出力は通常数秒以内に表示されます。入力制限に近い長いテキストの場合、処理時間がわずかに増加する可能性がありますが、一般的には非常に高速です。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 16 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "Where can I use Formalizer? Is it a website, app, or extension?", es: "¿Dónde puedo usar Formalizer? ¿Es un sitio web, una aplicación o una extensión?", ar: "أين يمكنني استخدام فورمالايزر؟ هل هو موقع ويب أم تطبيق أم امتداد؟", pt: "Onde posso usar o Formalizer? É um site, aplicativo ou extensão?", fr: "Où puis-je utiliser Formalizer ? Est-ce un site web, une application ou une extension ?", ru: "Где я могу использовать Formalizer? Это веб-сайт, приложение или расширение?", "zh-cn": "我可以在哪里使用 Formalizer？它是一个网站、应用程序还是扩展程序？", ja: "どこでFormalizerを使用できますか？ウェブサイト、アプリ、または拡張機能ですか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Currently, Formalizer is available as a web-based tool accessible through your browser on desktop and mobile devices. We are exploring possibilities for browser extensions or dedicated apps in the future.", es: "Actualmente, Formalizer está disponible como una herramienta basada en web accesible a través de tu navegador en computadoras de escritorio y dispositivos móviles. Estamos explorando posibilidades para extensiones de navegador o aplicaciones dedicadas en el futuro.", ar: "حاليًا، يتوفر فورمالايزر كأداة قائمة على الويب يمكن الوصول إليها من خلال متصفحك على أجهزة الكمبيوتر المكتبية والأجهزة المحمولة. نحن نستكشف إمكانيات امتدادات المتصفح أو التطبيقات المخصصة في المستقبل.", pt: "Atualmente, o Formalizer está disponível como uma ferramenta baseada na web, acessível através do seu navegador em desktops e dispositivos móveis. Estamos explorando possibilidades de extensões de navegador ou aplicativos dedicados no futuro.", fr: "Actuellement, Formalizer est disponible sous forme d'outil Web accessible via votre navigateur sur les ordinateurs de bureau et les appareils mobiles. Nous explorons les possibilités d'extensions de navigateur ou d'applications dédiées à l'avenir.", ru: "В настоящее время Formalizer доступен как веб-инструмент, доступный через ваш браузер на настольных и мобильных устройствах. Мы изучаем возможности для расширений браузера или выделенных приложений в будущем.", "zh-cn": "目前，Formalizer 可作为基于网络的工具，通过桌面和移动设备上的浏览器访问。我们正在探索未来推出浏览器扩展程序或专用应用程序的可能性。", ja: "現在、Formalizerはデスクトップおよびモバイルデバイスのブラウザを通じてアクセス可能なWebベースのツールとして利用可能です。将来的にはブラウザ拡張機能や専用アプリの可能性を検討しています。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 17 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "How does Formalizer handle specific slang or idioms?", es: "¿Cómo maneja Formalizer la jerga o modismos específicos?", ar: "كيف يتعامل فورمالايزر مع العامية أو المصطلحات المحددة؟", pt: "Como o Formalizer lida com gírias ou expressões idiomáticas específicas?", fr: "Comment Formalizer gère-t-il l'argot ou les expressions idiomatiques spécifiques ?", ru: "Как Formalizer обрабатывает специфический сленг или идиомы?", "zh-cn": "Formalizer 如何处理特定的俚语或习语？", ja: "Formalizerは特定のスラングやイディオムをどのように処理しますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "The AI is trained to recognize many common slang terms and idioms and suggest appropriate formal alternatives. However, very new, obscure, or highly regional slang might not be recognized or could be misinterpreted. In such cases, the tool might leave the term unchanged or offer a less suitable replacement. Reviewing these specific parts is important.", es: "La IA está entrenada para reconocer muchos términos de jerga y modismos comunes y sugerir alternativas formales apropiadas. Sin embargo, la jerga muy nueva, oscura o muy regional podría no ser reconocida o malinterpretada. En tales casos, la herramienta podría dejar el término sin cambios u ofrecer un reemplazo menos adecuado. Revisar estas partes específicas es importante.", ar: "تم تدريب الذكاء الاصطناعي على التعرف على العديد من المصطلحات العامية والاصطلاحية الشائعة واقتراح بدائل رسمية مناسبة. ومع ذلك، قد لا يتم التعرف على العامية الحديثة جدًا أو الغامضة أو الإقليمية للغاية أو قد يساء تفسيرها. في مثل هذه الحالات، قد تترك الأداة المصطلح دون تغيير أو تقدم بديلاً أقل ملاءمة. من المهم مراجعة هذه الأجزاء المحددة.", pt: "A IA é treinada para reconhecer muitas gírias e expressões idiomáticas comuns e sugerir alternativas formais apropriadas. No entanto, gírias muito novas, obscuras ou altamente regionais podem não ser reconhecidas ou podem ser mal interpretadas. Nesses casos, a ferramenta pode deixar o termo inalterado ou oferecer uma substituição menos adequada. Revisar essas partes específicas é importante.", fr: "L'IA est entraînée à reconnaître de nombreux termes d'argot et expressions idiomatiques courants et à suggérer des alternatives formelles appropriées. Cependant, l'argot très récent, obscur ou très régional peut ne pas être reconnu ou être mal interprété. Dans de tels cas, l'outil peut laisser le terme inchangé ou proposer un remplacement moins approprié. Il est important de vérifier ces parties spécifiques.", ru: "ИИ обучен распознавать многие распространенные сленговые термины и идиомы и предлагать соответствующие формальные альтернативы. Однако очень новый, малоизвестный или узкорегиональный сленг может не распознаваться или быть неверно истолкован. В таких случаях инструмент может оставить термин без изменений или предложить менее подходящую замену. Важно просматривать эти конкретные части.", "zh-cn": "人工智能经过训练，能够识别许多常见的俚语和习语，并提出适当的正式替代方案。然而，非常新的、晦涩的或地域性很强的俚语可能无法识别或被误解。在这种情况下，该工具可能会保留该术语不变或提供不太合适的替换。检查这些特定部分非常重要。", ja: "AIは、多くの一般的なスラング用語やイディオムを認識し、適切な形式的な代替案を提案するようにトレーニングされています。ただし、非常に新しい、不明瞭な、または地域性の高いスラングは認識されないか、誤解される可能性があります。そのような場合、ツールは用語を変更せずに残すか、あまり適切でない代替案を提供する可能性があります。これらの特定の部分を確認することが重要です。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 18 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "How can I get support or provide feedback?", es: "¿Cómo puedo obtener soporte o dar mi opinión?", ar: "كيف يمكنني الحصول على الدعم أو تقديم ملاحظات؟", pt: "Como posso obter suporte ou fornecer feedback?", fr: "Comment puis-je obtenir de l'aide ou donner mon avis ?", ru: "Как я могу получить поддержку или оставить отзыв?", "zh-cn": "我如何获得支持或提供反馈？", ja: "サポートを受けたり、フィードバックを提供したりするにはどうすればよいですか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "We welcome user feedback to improve Formalizer! You can usually find a 'Feedback' or 'Contact Us' link on the website. Use this to report issues, suggest improvements, or ask questions. As a free tool, direct support might be limited, but we review all feedback carefully.", es: "¡Agradecemos los comentarios de los usuarios para mejorar Formalizer! Generalmente puedes encontrar un enlace de 'Comentarios' o 'Contáctanos' en el sitio web. Úsalo para informar problemas, sugerir mejoras o hacer preguntas. Como herramienta gratuita, el soporte directo puede ser limitado, pero revisamos todos los comentarios cuidadosamente.", ar: "نرحب بملاحظات المستخدمين لتحسين فورمالايزر! يمكنك عادةً العثور على رابط 'ملاحظات' أو 'اتصل بنا' على موقع الويب. استخدمه للإبلاغ عن المشكلات أو اقتراح تحسينات أو طرح أسئلة. كأداة مجانية، قد يكون الدعم المباشر محدودًا، لكننا نراجع جميع الملاحظات بعناية.", pt: "Agradecemos o feedback do usuário para melhorar o Formalizer! Normalmente, você pode encontrar um link 'Feedback' ou 'Fale Conosco' no site. Use-o para relatar problemas, sugerir melhorias ou fazer perguntas. Como ferramenta gratuita, o suporte direto pode ser limitado, mas revisamos todos os feedbacks cuidadosamente.", fr: "Nous apprécions les commentaires des utilisateurs pour améliorer Formalizer ! Vous pouvez généralement trouver un lien « Commentaires » ou « Contactez-nous » sur le site Web. Utilisez-le pour signaler des problèmes, suggérer des améliorations ou poser des questions. En tant qu'outil gratuit, le support direct peut être limité, mais nous examinons attentivement tous les commentaires.", ru: "Мы приветствуем отзывы пользователей для улучшения Formalizer! Обычно вы можете найти ссылку «Обратная связь» или «Связаться с нами» на веб-сайте. Используйте ее, чтобы сообщать о проблемах, предлагать улучшения или задавать вопросы. Поскольку это бесплатный инструмент, прямая поддержка может быть ограничена, но мы внимательно рассматриваем все отзывы.", "zh-cn": "我们欢迎用户反馈以改进 Formalizer！您通常可以在网站上找到“反馈”或“联系我们”的链接。使用此链接报告问题、提出改进建议或提出问题。作为一个免费工具，直接支持可能有限，但我们会仔细审查所有反馈。", ja: "Formalizerを改善するためのユーザーフィードバックを歓迎します！通常、ウェブサイトで「フィードバック」または「お問い合わせ」のリンクを見つけることができます。これを使用して、問題を報告したり、改善を提案したり、質問したりしてください。無料ツールとして、直接的なサポートは限られているかもしれませんが、すべてのフィードバックを注意深く確認しています。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 19 */}
+          <details class="border-b dark:border-gray-700 pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "Who is Formalizer designed for?", es: "¿Para quién está diseñado Formalizer?", ar: "لمن تم تصميم فورمالايزر؟", pt: "Para quem o Formalizer foi projetado?", fr: "À qui s'adresse Formalizer ?", ru: "Для кого предназначен Formalizer?", "zh-cn": "Formalizer 是为谁设计的？", ja: "Formalizerは誰のために設計されていますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Formalizer is useful for anyone needing to ensure their writing is professional and appropriate for formal contexts. This includes students, job applicants, business professionals, non-native speakers aiming for formal accuracy, customer service agents, and anyone communicating in official or academic settings.", es: "Formalizer es útil para cualquiera que necesite asegurarse de que su escritura sea profesional y apropiada para contextos formales. Esto incluye estudiantes, solicitantes de empleo, profesionales de negocios, hablantes no nativos que buscan precisión formal, agentes de servicio al cliente y cualquiera que se comunique en entornos oficiales o académicos.", ar: "فورمالايزر مفيد لأي شخص يحتاج إلى التأكد من أن كتاباته احترافية ومناسبة للسياقات الرسمية. وهذا يشمل الطلاب، والمتقدمين للوظائف، والمهنيين في مجال الأعمال، والمتحدثين غير الأصليين الذين يهدفون إلى الدقة الرسمية، ووكلاء خدمة العملاء، وأي شخص يتواصل في بيئات رسمية أو أكاديمية.", pt: "O Formalizer é útil para qualquer pessoa que precise garantir que sua escrita seja profissional e apropriada para contextos formais. Isso inclui estudantes, candidatos a emprego, profissionais de negócios, falantes não nativos que buscam precisão formal, agentes de atendimento ao cliente e qualquer pessoa que se comunique em ambientes oficiais ou acadêmicos.", fr: "Formalizer est utile à toute personne ayant besoin de s'assurer que ses écrits sont professionnels et adaptés aux contextes formels. Cela inclut les étudiants, les candidats à un emploi, les professionnels, les locuteurs non natifs visant l'exactitude formelle, les agents du service client et toute personne communiquant dans un cadre officiel ou académique.", ru: "Formalizer полезен всем, кому необходимо убедиться, что их текст является профессиональным и подходит для формальных контекстов. Сюда входят студенты, соискатели работы, бизнес-профессионалы, неносители языка, стремящиеся к формальной точности, агенты службы поддержки клиентов и все, кто общается в официальной или академической среде.", "zh-cn": "Formalizer 对于任何需要确保其写作专业且适合正式场合的人都很有用。这包括学生、求职者、商务专业人士、追求正式准确性的非母语人士、客户服务代理以及任何在官方或学术环境中进行交流的人。", ja: "Formalizerは、自分の文章がプロフェッショナルであり、フォーマルな文脈に適していることを確認する必要があるすべての人に役立ちます。これには、学生、求職者、ビジネスプロフェッショナル、フォーマルな正確さを目指す非ネイティブスピーカー、カスタマーサービスエージェント、および公式または学術的な環境でコミュニケーションをとるすべての人が含まれます。" })}
+            </p>
+          </details>
+      
+          {/* FAQ 20 - No border-b on the last item */}
+          <details class="pb-4 group">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-xl font-semibold group-hover:text-blue-600">
+                  {t({ en: "Can I customize the level of formality?", es: "¿Puedo personalizar el nivel de formalidad?", ar: "هل يمكنني تخصيص مستوى الرسمية؟", pt: "Posso personalizar o nível de formalidade?", fr: "Puis-je personnaliser le niveau de formalité ?", ru: "Могу ли я настроить уровень формальности?", "zh-cn": "我可以自定义正式程度吗？", ja: "形式性のレベルをカスタマイズできますか？" })}
+              </h3>
+               <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">
+              {t({ en: "Currently, Formalizer aims for a standard level of professional/academic formality. While direct customization of formality levels (e.g., 'slightly formal', 'very formal') is not yet a feature, the AI considers context to avoid making text overly stiff or unnatural. We are considering options for more granular control in future updates.", es: "Actualmente, Formalizer apunta a un nivel estándar de formalidad profesional/académica. Si bien la personalización directa de los niveles de formalidad (p. ej., 'ligeramente formal', 'muy formal') aún no es una característica, la IA considera el contexto para evitar que el texto sea demasiado rígido o antinatural. Estamos considerando opciones para un control más granular en futuras actualizaciones.", ar: "حاليًا، يهدف فورمالايزر إلى مستوى قياسي من الرسمية المهنية/الأكاديمية. في حين أن التخصيص المباشر لمستويات الرسمية (على سبيل المثال، 'رسمي قليلاً'، 'رسمي جدًا') ليس ميزة بعد، فإن الذكاء الاصطناعي يأخذ السياق في الاعتبار لتجنب جعل النص متصلبًا أو غير طبيعي بشكل مفرط. نحن ندرس خيارات لمزيد من التحكم الدقيق في التحديثات المستقبلية.", pt: "Atualmente, o Formalizer visa um nível padrão de formalidade profissional/acadêmica. Embora a personalização direta dos níveis de formalidade (por exemplo, 'ligeiramente formal', 'muito formal') ainda não seja um recurso, a IA considera o contexto para evitar tornar o texto excessivamente rígido ou não natural. Estamos considerando opções para um controle mais granular em atualizações futuras.", fr: "Actuellement, Formalizer vise un niveau standard de formalité professionnelle/académique. Bien que la personnalisation directe des niveaux de formalité (par exemple, « légèrement formel », « très formel ») ne soit pas encore une fonctionnalité, l'IA prend en compte le contexte pour éviter de rendre le texte trop rigide ou artificiel. Nous envisageons des options pour un contrôle plus granulaire dans les futures mises à jour.", ru: "В настоящее время Formalizer стремится к стандартному уровню профессиональной/академической формальности. Хотя прямая настройка уровней формальности (например, «слегка формальный», «очень формальный») еще не является функцией, ИИ учитывает контекст, чтобы избежать чрезмерной жесткости или неестественности текста. Мы рассматриваем варианты более детального контроля в будущих обновлениях.", "zh-cn": "目前，Formalizer 的目标是达到标准的专业/学术正式程度。虽然直接自定义正式程度（例如，“稍微正式”、“非常正式”）尚不是一项功能，但人工智能会考虑上下文，以避免使文本过于生硬或不自然。我们正在考虑在未来的更新中提供更精细控制的选项。", ja: "現在、Formalizerは標準的なプロフェッショナル/アカデミックな形式性のレベルを目指しています。形式性のレベル（例：「ややフォーマル」、「非常にフォーマル」）を直接カスタマイズする機能はまだありませんが、AIは文脈を考慮してテキストが過度に堅苦しくなったり不自然になったりするのを避けます。将来のアップデートでより詳細な制御のためのオプションを検討しています。" })}
+            </p>
+          </details>
+      
+      </div>
 
-        {/* FAQ 3 */}
-        <details class="border-b dark:border-gray-700 pb-4 group">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-xl font-semibold group-hover:text-blue-600">
-                {t({ en: "What types of text can I formalize?", es: "¿Qué tipos de texto puedo formalizar?", ar: "ما أنواع النصوص التي يمكنني إضفاء الطابع الرسمي عليها؟", pt: "Que tipos de texto posso formalizar?", fr: "Quels types de texte puis-je formaliser ?", ru: "Какие типы текста я могу формализовать?", "zh-cn": "我可以正式化哪些类型的文本？", ja: "どのような種類のテキストを形式化できますか？" })}
-            </h3>
-             <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
-          </summary>
-          <p class="mt-3 text-gray-600 dark:text-gray-400">
-            {t({ en: "Formalizer is ideal for various professional and academic communications: emails, reports, memos, proposals, cover letters, essays, presentations, customer service replies, and more. It helps refine everyday messages or longer documents.", es: "Formalizer es ideal para diversas comunicaciones profesionales y académicas: correos electrónicos, informes, memorandos, propuestas, cartas de presentación, ensayos, presentaciones, respuestas de servicio al cliente y más. Ayuda a refinar mensajes cotidianos o documentos más largos.", ar: "فورمالايزر مثالي لمختلف الاتصالات المهنية والأكاديمية: رسائل البريد الإلكتروني، والتقارير، والمذكرات، والمقترحات، وخطابات التغطية، والمقالات، والعروض التقديمية، وردود خدمة العملاء، والمزيد. يساعد على صقل الرسائل اليومية أو المستندات الأطول.", pt: "O Formalizer é ideal para várias comunicações profissionais e acadêmicas: e-mails, relatórios, memorandos, propostas, cartas de apresentação, ensaios, apresentações, respostas de atendimento ao cliente e muito mais. Ajuda a refinar mensagens do dia a dia ou documentos mais longos.", fr: "Formalizer est idéal pour diverses communications professionnelles et académiques : e-mails, rapports, mémos, propositions, lettres de motivation, dissertations, présentations, réponses au service client, etc. Il aide à affiner les messages quotidiens ou les documents plus longs.", ru: "Formalizer идеально подходит для различных профессиональных и академических коммуникаций: электронных писем, отчетов, служебных записок, предложений, сопроводительных писем, эссе, презентаций, ответов службы поддержки клиентов и многого другого. Он помогает отточить повседневные сообщения или более длинные документы.", "zh-cn": "Formalizer 非常适合各种专业和学术交流：电子邮件、报告、备忘录、提案、求职信、论文、演示文稿、客户服务回复等等。它有助于润色日常消息或较长的文档。", ja: "Formalizerは、メール、レポート、メモ、提案書、カバーレター、エッセイ、プレゼンテーション、カスタマーサービスへの返信など、さまざまな専門的および学術的なコミュニケーションに最適です。日常的なメッセージや長いドキュメントを洗練させるのに役立ちます。" })}
-          </p>
-        </details>
 
-         {/* FAQ 4 - Added FAQ */}
-        <details class="border-b dark:border-gray-700 pb-4 group">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-xl font-semibold group-hover:text-blue-600">
-                {t({ en: "Is Formalizer free to use?", es: "¿Es Formalizer de uso gratuito?", ar: "هل فورمالايزر مجاني للاستخدام؟", pt: "O Formalizer é gratuito?", fr: "Formalizer est-il gratuit ?", ru: "Можно ли использовать Formalizer бесплатно?", "zh-cn": "Formalizer 是免费使用的吗？", ja: "Formalizerは無料で使用できますか？" })}
-            </h3>
-             <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
-          </summary>
-          <p class="mt-3 text-gray-600 dark:text-gray-400">
-            {t({ en: "Formalizer offers a free tier with generous usage limits, perfect for everyday needs. We may introduce premium plans in the future with higher limits, advanced features like tone customization, and team collaboration options.", es: "Formalizer ofrece un nivel gratuito con límites de uso generosos, perfecto para las necesidades diarias. Podemos introducir planes premium en el futuro con límites más altos, funciones avanzadas como personalización de tono y opciones de colaboración en equipo.", ar: "يقدم فورمالايزر طبقة مجانية بحدود استخدام سخية، مثالية للاحتياجات اليومية. قد نقدم خططًا مميزة في المستقبل بحدود أعلى وميزات متقدمة مثل تخصيص النبرة وخيارات التعاون الجماعي.", pt: "O Formalizer oferece um nível gratuito com limites de uso generosos, perfeito para as necessidades diárias. Podemos introduzir planos premium no futuro com limites mais altos, recursos avançados como personalização de tom e opções de colaboração em equipe.", fr: "Formalizer propose un niveau gratuit avec des limites d'utilisation généreuses, parfait pour les besoins quotidiens. Nous pourrions introduire des plans premium à l'avenir avec des limites plus élevées, des fonctionnalités avancées comme la personnalisation du ton et des options de collaboration d'équipe.", ru: "Formalizer предлагает бесплатный уровень с щедрыми лимитами использования, идеально подходящий для повседневных нужд. В будущем мы можем ввести премиум-планы с более высокими лимитами, расширенными функциями, такими как настройка тона, и опциями для совместной работы в команде.", "zh-cn": "Formalizer 提供具有充足使用限制的免费套餐，非常适合日常需求。我们未来可能会推出具有更高限制、语气定制等高级功能以及团队协作选项的高级计划。", ja: "Formalizerは、日常的なニーズに最適な、十分な使用制限のある無料プランを提供しています。将来的には、より高い制限、トーンカスタマイズなどの高度な機能、チームコラボレーションオプションを備えたプレミアムプランを導入する可能性があります。" })}
-          </p>
-        </details>
-
-         {/* FAQ 5 - Added FAQ */}
-        <details class="pb-4 group"> {/* No border-b on last item */}
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-xl font-semibold group-hover:text-blue-600">
-                {t({ en: "Does it just translate? How is it different from translation tools?", es: "¿Solo traduce? ¿En qué se diferencia de las herramientas de traducción?", ar: "هل يترجم فقط؟ كيف يختلف عن أدوات الترجمة؟", pt: "Ele apenas traduz? Como ele difere das ferramentas de tradução?", fr: "Est-ce que ça traduit juste ? En quoi est-ce différent des outils de traduction ?", ru: "Он просто переводит? Чем он отличается от инструментов перевода?", "zh-cn": "它只是翻译吗？它与翻译工具有何不同？", ja: "単に翻訳するだけですか？翻訳ツールとはどう違いますか？" })}
-            </h3>
-             <Icon name="mdi:chevron-down" class="w-6 h-6 transition-transform duration-300 group-open:rotate-180" />
-          </summary>
-          <p class="mt-3 text-gray-600 dark:text-gray-400">
-            {t({ en: "No, Formalizer focuses on adjusting the *formality and tone* within the *same language*. While it supports multiple languages, its core function is not translation (changing from one language to another) but rather refinement (making text more professional within its original language). Translation tools change language; Formalizer improves style.", es: "No, Formalizer se enfoca en ajustar la *formalidad y el tono* dentro del *mismo idioma*. Si bien admite múltiples idiomas, su función principal no es la traducción (cambiar de un idioma a otro) sino el refinamiento (hacer que el texto sea más profesional dentro de su idioma original). Las herramientas de traducción cambian el idioma; Formalizer mejora el estilo.", ar: "لا، يركز فورمالايزر على تعديل *الرسمية والنبرة* ضمن *نفس اللغة*. بينما يدعم لغات متعددة، فإن وظيفته الأساسية ليست الترجمة (التغيير من لغة إلى أخرى) بل الصقل (جعل النص أكثر احترافية بلغته الأصلية). أدوات الترجمة تغير اللغة؛ فورمالايزر يحسن الأسلوب.", pt: "Não, o Formalizer foca em ajustar a *formalidade e o tom* dentro do *mesmo idioma*. Embora suporte múltiplos idiomas, sua função principal não é a tradução (mudar de um idioma para outro), mas sim o refinamento (tornar o texto mais profissional em seu idioma original). Ferramentas de tradução mudam o idioma; o Formalizer melhora o estilo.", fr: "Non, Formalizer se concentre sur l'ajustement de la *formalité et du ton* au sein de la *même langue*. Bien qu'il prenne en charge plusieurs langues, sa fonction principale n'est pas la traduction (passer d'une langue à une autre) mais plutôt le raffinement (rendre le texte plus professionnel dans sa langue d'origine). Les outils de traduction changent la langue ; Formalizer améliore le style.", ru: "Нет, Formalizer фокусируется на настройке *формальности и тона* в пределах *одного языка*. Хотя он поддерживает несколько языков, его основная функция - не перевод (изменение с одного языка на другой), а скорее улучшение (придание тексту большей профессиональности на его исходном языке). Инструменты перевода меняют язык; Formalizer улучшает стиль.", "zh-cn": "不，Formalizer 专注于在*同一语言*内调整*正式性和语气*。虽然它支持多种语言，但其核心功能不是翻译（从一种语言更改为另一种语言），而是润色（使文本在其原始语言内更专业）。翻译工具改变语言；Formalizer 改进风格。", ja: "いいえ、Formalizerは*同じ言語*内で*形式性とトーン*を調整することに焦点を当てています。複数の言語をサポートしていますが、そのコア機能は翻訳（ある言語から別の言語への変更）ではなく、洗練（元の言語内でテキストをよりプロフェッショナルにすること）です。翻訳ツールは言語を変更します。Formalizerはスタイルを改善します。" })}
-          </p>
-        </details>
 
       </div>
     </section>
