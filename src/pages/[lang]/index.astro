@@ -30,7 +30,6 @@ const metaTitle = t({
   "zh-cn": `人工智能文本正式化工具`,
   ja: `AIテキスト形式化ツール`,
 });
-});
 
 const metaDescription = t({
   en: "Elevate your writing with Formalizer, the AI-powered tool that instantly transforms casual text into polished, professional content. Ideal for emails, reports, and business communication across 30+ languages.",
@@ -94,7 +93,7 @@ const lang = Astro.params.lang; // Already defined in the original code
 
       <!-- The Formalizer Tool -->
       <div id="demo" class="max-w-4xl mx-auto">
-        <Formalizer lang={lang} client:load />
+        <Formalizer lang={lang} client:load/>
       </div>
 
     </section>

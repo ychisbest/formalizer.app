@@ -1,4 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
+    // Add imports from shadcn components at the top of your file
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Separator } from "@/components/ui/separator";
+
 // Assuming LOCALES is still needed for the 't' function if you keep multi-language support
 // import { LOCALES } from "@/i18n";
 
@@ -138,7 +145,7 @@ const DemoSection = ({ lang = 'en' }) => { // Default lang to 'en' if not provid
         setIsCopied(false); // Reset copied state on new generation
 
         try {
-            const response = await fetch('https://ai.ych.show', {
+            const response = await fetch('https://ai.anynote.online', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -233,84 +240,88 @@ const DemoSection = ({ lang = 'en' }) => { // Default lang to 'en' if not provid
     );
 
 
+
     return (
-        <section id='core' className=" py-12 sm:py-16 px-4">
-            <div className="max-w-4xl mx-auto">
-
-                {/* Main Card */}
-                <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200/80">
-                    <div className="grid md:grid-cols-2">
-
+        <section id="core" className="py-6">
+            <div className="max-w-3xl mx-auto">
+                <Card>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                         {/* Input Column */}
-                        <div className="p-6 md:p-8">
-                            <h3 className="text-base font-semibold text-gray-500 mb-3 uppercase tracking-wider">
-                                {t({ en: "Your Text" })}
-                            </h3>
-                            <textarea
-                                ref={textareaRef}
-                                className="w-full h-72 resize-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none p-4 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 text-sm leading-relaxed shadow-sm transition duration-150 ease-in-out"
-                                value={inputText}
-                                onChange={(e) => setInputText(e.target.value)}
-                                placeholder={t({ en: "Enter your informal text here..."})}
-                                disabled={isGenerating} // Disable input while generating
-                            />
+                        <div className="p-4">
+                            <CardHeader className="px-0 pt-0 pb-2">
+                                <h3 className="text-xs uppercase font-semibold tracking-wider">
+                                    {t({ en: "Your Text" })}
+                                </h3>
+                            </CardHeader>
+                            <CardContent className="px-0 py-1">
+                                <Textarea
+                                    ref={textareaRef}
+                                    className="resize-none h-64"
+                                    value={inputText}
+                                    onChange={(e) => setInputText(e.target.value)}
+                                    placeholder={t({ en: "Enter your informal text here..." })}
+                                    disabled={isGenerating}
+                                />
+                            </CardContent>
                         </div>
 
                         {/* Output Column */}
-                        {/* Add subtle border for visual separation on larger screens */}
-                        <div className="p-6 md:p-8 border-t border-gray-200 md:border-t-0 md:border-l md:border-gray-200/80 relative">
-                            <div className="flex justify-between items-center mb-3">
-                                <h3 className="text-base font-semibold text-gray-500 uppercase tracking-wider">
+                        <div className="p-4 border-t md:border-t-0 md:border-l">
+                            <CardHeader className="px-0 pt-0 pb-2 flex items-center justify-between">
+                                <h3 className="text-xs uppercase font-semibold tracking-wider">
                                     {t({ en: "Formalized Version" })}
                                 </h3>
                                 {outputText && !isGenerating && (
-                                    <button
+                                    <Button
+                                        variant={isCopied ? "secondary" : "ghost"}
+                                        size="sm"
                                         onClick={copyToClipboard}
                                         disabled={isCopied}
-                                        className={`flex items-center px-2.5 py-1 rounded-md text-xs font-medium transition-all duration-150 ease-in-out ${isCopied
-                                            ? 'bg-green-100 text-green-700 cursor-default'
-                                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800'
-                                            }`}
                                     >
                                         {isCopied ? <CheckIcon /> : <CopyIcon />}
-                                        {isCopied ? t({ en: "Copied!" }) : t({ en: "Copy" })}
-                                    </button>
+                                        <span className="text-xs">{isCopied ? t({ en: "Copied!" }) : t({ en: "Copy" })}</span>
+                                    </Button>
                                 )}
-                            </div>
-                            <div className="w-full h-72 overflow-auto bg-white p-4 border border-gray-300 rounded-lg text-gray-800 text-sm leading-relaxed shadow-sm relative">
-                                {isGenerating && !outputText && ( // Show loader only if output is empty
-                                    <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75">
-                                        <div className="flex space-x-1.5">
-                                            <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
-                                            <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce delay-75"></div>
-                                            <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce delay-150"></div>
+                            </CardHeader>
+                            <CardContent className="px-0 py-1">
+                                <div className="h-64 rounded border p-2 relative">
+                                    {isGenerating && !outputText && (
+                                        <div className="absolute inset-0 flex items-center justify-center bg-background/50">
+                                            <div className="flex gap-1">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                                                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse delay-75" />
+                                                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse delay-150" />
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
-                                <p className="whitespace-pre-wrap text-left">
-                                    {outputText || (!isGenerating && (
-                                        <span className="text-gray-400">{t({ en: "Your formalized text will appear here."})}</span>
-                                    ))}
-                                </p>
-                            </div>
+                                    )}
+                                    <p className="text-sm font-serif whitespace-pre-wrap">
+                                        {outputText || (
+                                            !isGenerating && (
+                                                <span className="text-muted-foreground italic text-xs">
+                                                    {t({ en: "Your formalized text will appear here." })}
+                                                </span>
+                                            )
+                                        )}
+                                    </p>
+                                </div>
+                            </CardContent>
                         </div>
                     </div>
 
                     {/* Action Button Area */}
-                    <div className="p-6 text-center border-t border-gray-200/80">
-                        <button
-                            className={`px-6 py-2.5 text-white font-semibold rounded-lg text-base transition-all duration-150 ease-in-out shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${isGenerating || !inputText.trim()
-                                ? 'bg-blue-400 cursor-not-allowed'
-                                : 'bg-blue-600 hover:bg-blue-700 hover:shadow-md'
-                                }`}
+                    <Separator />
+                    <CardFooter className="flex justify-center p-3">
+                        <Button
+                            size="sm"
+                            variant="default"
                             onClick={formalizeText}
                             disabled={isGenerating || !inputText.trim()}
+                            className="min-w-32"
                         >
                             {isGenerating ? t({ en: "Formalizing..." }) : t({ en: "Formalize Text" })}
-                        </button>
-                    </div>
-                </div>
-
+                        </Button>
+                    </CardFooter>
+                </Card>
             </div>
         </section>
     );
